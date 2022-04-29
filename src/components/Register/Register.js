@@ -43,7 +43,7 @@ const Register = () => {
         <button className="py-1 px-5 bg-orange-600 my-2 mr-3 rounded-full">
           Register
         </button>
-        <Link to="/login">Login here</Link>
+        <Link className='border-b-2 border-slate-900' to="/login">Login here</Link>
         <br />
         <div className="google-sign-ing text-center">
           <button className="mt-3 py-2 px-5 bg-blue-700 text-white rounded-full">

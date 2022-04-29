@@ -27,7 +27,7 @@ const Login = () => {
         <input type="password" name="password" id="password" placeholder='Enter Your Password'/>
         <br />
         <button className='py-1 px-5 bg-orange-600 my-2 mr-3 rounded-full'>Login</button>
-        <Link to='/register'>Register here</Link>
+        <Link className='border-b-2 border-slate-900' to='/register'>Register here</Link>
         <br />
         <div className="google-sign-ing text-center">
         <button className='mt-3 py-2 px-5 bg-blue-700 text-white rounded-full'>Login with Google</button>

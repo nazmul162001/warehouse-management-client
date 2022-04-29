@@ -1,0 +1,10 @@
+.input-form{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 30px;
+  border-radius: 5px;
+}
+.input-form input{
+  box-shadow: inset rgba(235, 220, 220, 0.89) 0px 5px 15px;
+  border-radius: 5px;
+  padding:5px;
+}

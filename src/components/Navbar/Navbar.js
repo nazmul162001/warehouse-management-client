@@ -5,7 +5,7 @@ import logo from '../../images/logo.png';
 
 const Navbar = () => {
   return (
-    <nav className="flex justify-between items-center px-10 py-5">
+    <nav className="flex justify-between items-center px-10 py-5 sticky top-0 z-50">
       <div className="logo">
         <Link to="/">
           <img src={logo} alt="" />

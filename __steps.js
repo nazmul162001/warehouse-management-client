@@ -3,5 +3,5 @@
  * 2. install react router
  * 3. put app into browser router
  * 4. install tailwind css
- * 5. 
+ * 5. added form & install react hook form
  */

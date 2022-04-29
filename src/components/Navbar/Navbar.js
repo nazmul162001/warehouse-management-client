@@ -2,8 +2,20 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './Navbar.css';
 import logo from '../../images/logo.png';
+import auth from '../../firebase.init';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { signOut } from 'firebase/auth';
 
 const Navbar = () => {
+  const [ user ] = useAuthState(auth)
+
+  //signOUt
+  const handleLogOut = (e) => {
+    e.preventDefault()
+    signOut(auth)
+  }
+  
+  
   return (
     <nav className="flex justify-between items-center px-10 py-5 sticky top-0 z-50">
       <div className="logo">
@@ -24,12 +36,23 @@ const Navbar = () => {
         >
           blogs
         </NavLink>
-        <NavLink
+        {
+          user
+          ?
+          <NavLink
+            onClick={handleLogOut}
+          className={({ isActive }) => (isActive ? 'active-link' : 'link')}
+          to="/login"
+        >
+          Logout
+        </NavLink>
+          :
+          <NavLink
           className={({ isActive }) => (isActive ? 'active-link' : 'link')}
           to="/login"
         >
           Login
-        </NavLink>
+        </NavLink>}
       </div>
     </nav>
   );

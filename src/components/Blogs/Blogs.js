@@ -3,7 +3,7 @@ import React from 'react';
 const Blogs = () => {
   return (
     <div>
-      This is my Blogs page
+      <h1 className='text-center text-3xl'>This is my blogs page</h1>
     </div>
   );
 };

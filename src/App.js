@@ -4,6 +4,7 @@ import Blogs from './components/Blogs/Blogs';
 import HomePage from './components/HomePage/HomePage';
 import Login from './components/Login/Login';
 import LogOut from './components/LogOut/LogOut';
+import ManageItem from './components/ManageItem/ManageItem';
 import Navbar from './components/Navbar/Navbar';
 import NotFound from './components/NotFound/NotFound';
 import Register from './components/Register/Register';
@@ -18,6 +19,7 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/logout' element={<LogOut></LogOut>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
+        <Route path='/manage' element={<ManageItem></ManageItem>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
     </div>

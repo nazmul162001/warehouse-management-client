@@ -30,11 +30,44 @@ const Navbar = () => {
         >
           Home
         </NavLink>
+
+        {
+          user ?         <NavLink
+          className={({ isActive }) => (isActive ? 'active-link' : 'link')}
+          to="/manage"
+        >
+          Manage Item
+        </NavLink>
+        :
+        ''
+        }
+        {
+          user ?         <NavLink
+          className={({ isActive }) => (isActive ? 'active-link' : 'link')}
+          to="/additem"
+        >
+          Add Item
+        </NavLink>
+        :
+        ''
+        }
+        {
+          user ?         <NavLink
+          className={({ isActive }) => (isActive ? 'active-link' : 'link')}
+          to="/myitem"
+        >
+          My Item
+        </NavLink>
+        :
+        ''
+        }
+        
+        
         <NavLink
           className={({ isActive }) => (isActive ? 'active-link' : 'link')}
           to="/blogs"
         >
-          blogs
+          Blogs
         </NavLink>
         {
           user

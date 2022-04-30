@@ -12,4 +12,5 @@
  * 12. install react firebase hooks
  * 13. enable email & pass signIn
  * 14. install toast -> npm i react-toastify
+ * 15. install react icons & hero icons
  */

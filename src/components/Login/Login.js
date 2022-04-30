@@ -66,6 +66,7 @@ const Login = () => {
           name="email"
           id="email"
           placeholder="Enter Your Email"
+          required
         />
         <br />
         <label htmlFor="password">Password</label>
@@ -75,6 +76,7 @@ const Login = () => {
           name="password"
           id="password"
           placeholder="Enter Your Password"
+          required
         />
         <br />
         {errorMessage}

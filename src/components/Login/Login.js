@@ -16,6 +16,7 @@ const Login = () => {
       <p className="italic text-red-600 font-xl"> {googleError.message} </p>
     );
   }
+  
   if (googleUser || user) {
     navigate('/');
   }

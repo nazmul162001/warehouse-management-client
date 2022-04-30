@@ -15,12 +15,17 @@ const Register = () => {
   const navigate = useNavigate();
 
   let errorMessage;
-  if (error || googleError) {
+  if (error) {
     errorMessage = (
       <p className="italic text-red-600 font-xl">
-        {error.message}
+        {' '}
+        User already exists, Please Log in{' '}
       </p>
     );
+  }
+
+  if(googleError){
+    errorMessage = <p className='italic text-red-600 font-xl'>{googleError.message}</p>
   }
 
   if(user){

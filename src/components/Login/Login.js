@@ -1,22 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import './Login.css';
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import {
+  useSendPasswordResetEmail,
+  useSignInWithEmailAndPassword,
+  useSignInWithGoogle,
+} from 'react-firebase-hooks/auth';
 
 const Login = () => {
-  const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
+  const [signInWithGoogle, googleUser, googleLoading, googleError] =
+    useSignInWithGoogle(auth);
   const navigate = useNavigate();
+  const [email, setEmail] = useState('');
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+  const [sendPasswordResetEmail, sending, resetError] =
+    useSendPasswordResetEmail(auth);
 
+
+    // show error message
   let errorMessage;
   if (googleError) {
     errorMessage = (
       <p className="italic text-red-600 font-xl"> {googleError.message} </p>
     );
   }
-  
+
   if (googleUser || user) {
     navigate('/');
   }
@@ -27,7 +37,21 @@ const Login = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    signInWithEmailAndPassword(email,password)
+    signInWithEmailAndPassword(email, password);
+  };
+  // get email from input //
+  const handleEmail = (e) => {
+    setEmail(e.target.value);
+  };
+
+  // reset password //
+  const handleResetPassword = () => {
+    if (!email) {
+      alert('please input an email');
+    } else {
+      sendPasswordResetEmail(email)
+      alert('success');
+    }
   };
 
   return (
@@ -36,6 +60,7 @@ const Login = () => {
         <label htmlFor="email">Email</label>
         <br />
         <input
+          onChange={handleEmail}
           type="email"
           name="email"
           id="email"
@@ -65,7 +90,15 @@ const Login = () => {
             </Link>
           </p>
         </div>
-        <p className="italic">Forget password? <button className='underline text-sky-600'>reset password</button> </p>
+        <p className="italic">
+          Forget password?{' '}
+          <button
+            onClick={handleResetPassword}
+            className="underline text-sky-600"
+          >
+            reset password
+          </button>{' '}
+        </p>
         <br />
         <div className="google-sign-ing text-center">
           <div

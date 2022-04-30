@@ -7,6 +7,7 @@ import {
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
 } from 'react-firebase-hooks/auth';
+import { toast } from 'react-toastify';
 
 const Login = () => {
   const [signInWithGoogle, googleUser, googleLoading, googleError] =
@@ -47,10 +48,10 @@ const Login = () => {
   // reset password //
   const handleResetPassword = () => {
     if (!email) {
-      alert('please input an email');
+      toast.error('please input email')
     } else {
       sendPasswordResetEmail(email)
-      alert('success');
+      toast.success('reset email sent')
     }
   };
 

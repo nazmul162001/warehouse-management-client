@@ -5,6 +5,7 @@ import {
   useSignInWithGoogle,
 } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import { toast } from 'react-toastify';
 
 const Register = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
@@ -40,6 +41,7 @@ const Register = () => {
 
     if (password !== confirmPassword) {
         setErr('Password do not match');
+        toast.error('password do not match')
         return;
     }
     createUserWithEmailAndPassword(email, password);

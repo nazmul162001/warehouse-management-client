@@ -2,19 +2,21 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import './Login.css';
-import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 
 const Login = () => {
-  const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+  const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
   const navigate = useNavigate();
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
 
   let errorMessage;
-  if (error) {
+  if (googleError) {
     errorMessage = (
-      <p className="italic text-red-600 font-xl"> {error.message} </p>
+      <p className="italic text-red-600 font-xl"> {googleError.message} </p>
     );
   }
-  if (user) {
+  if (googleUser || user) {
     navigate('/');
   }
 
@@ -24,7 +26,7 @@ const Login = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    console.log(email, password);
+    signInWithEmailAndPassword(email,password)
   };
 
   return (
@@ -54,18 +56,23 @@ const Login = () => {
           <button className="py-1 px-5 bg-orange-600 my-2 mr-3 rounded-full">
             Login
           </button>
-          <Link className="border-b-2 border-slate-900" to="/register">
-            Register here
-          </Link>
+
+          <p>
+            New here?{' '}
+            <Link className="underline text-sky-600 italic" to="/register">
+              Register here
+            </Link>
+          </p>
         </div>
+        <p className="italic">Forget password? <button className='underline text-sky-600'>reset password</button> </p>
         <br />
         <div className="google-sign-ing text-center">
-          <button
+          <div
             onClick={() => signInWithGoogle()}
-            className="mt-3 py-2 px-5 bg-blue-700 text-white rounded-full"
+            className="mt-3 py-2 px-5 bg-blue-700 text-white rounded-full cursor-pointer"
           >
             Login with Google
-          </button>
+          </div>
         </div>
       </form>
     </div>

@@ -10,4 +10,6 @@
  * 9. setUp firebase init / getAuth
  * 10. enable google signIn
  * 12. install react firebase hooks
+ * 13. enable email & pass signIn
+ * 14. 
  */

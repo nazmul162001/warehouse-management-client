@@ -1,15 +1,46 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-
-const handleRegister = e => {
-  e.preventDefault();
-  const email = e.target.email.value;
-  const password = e.target.password.value;
-
-  console.log(email, password);
-}
+import React, { useState } from 'react';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
+import {
+  useCreateUserWithEmailAndPassword,
+  useSignInWithGoogle,
+} from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 const Register = () => {
+  const [createUserWithEmailAndPassword, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+  const [signInWithGoogle, googleUser, googleLoading, googleError] =
+    useSignInWithGoogle(auth);
+  const [err, setErr] = useState('');
+  const navigate = useNavigate();
+
+  let errorMessage;
+  if (error || googleError) {
+    errorMessage = (
+      <p className="italic text-red-600 font-xl">
+        {error.message}
+      </p>
+    );
+  }
+
+  if(user){
+    navigate('/')
+  }
+
+  const handleRegister = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    const confirmPassword = e.target.confirmPassword.value;
+
+    if (password !== confirmPassword) {
+        setErr('Password do not match');
+        return;
+    }
+    createUserWithEmailAndPassword(email, password);
+    setErr('');
+  };
+
   return (
     <div className="container flex flex-col justify-center items-center h-96">
       <form onSubmit={handleRegister} className="input-form leading-6">
@@ -20,6 +51,7 @@ const Register = () => {
           name="email"
           id="email"
           placeholder="Enter Your Email"
+          required
         />
         <br />
         <label htmlFor="password">Password</label>
@@ -29,6 +61,7 @@ const Register = () => {
           name="password"
           id="password"
           placeholder="Enter Password"
+          required
         />
         <br />
         <label htmlFor="confirmPassword">Confirm Password</label>
@@ -38,17 +71,31 @@ const Register = () => {
           name="confirmPassword"
           id="confirmPassword"
           placeholder="Enter Password Again"
+          required
         />
         <br />
-        <button className="py-1 px-5 bg-orange-600 my-2 mr-3 rounded-full">
-          Register
-        </button>
-        <Link className='border-b-2 border-slate-900' to="/login">Login here</Link>
+        {errorMessage}
+        <p className="italic text-red-500">{err}</p>
+        <br />
+        <div className="login-btn flex items-center justify-between">
+          <button className="py-1 px-5 bg-orange-600 my-2 mr-3 rounded-full">
+            Register
+          </button>
+          <p>
+            Already a member?{' '}
+            <Link className="underline text-sky-600 italic" to="/login">
+              Login here
+            </Link>
+          </p>
+        </div>
         <br />
         <div className="google-sign-ing text-center">
-          <button className="mt-3 py-2 px-5 bg-blue-700 text-white rounded-full">
+          <div
+            onClick={() => signInWithGoogle()}
+            className="mt-3 py-2 px-5 bg-blue-700 text-white rounded-full cursor-pointer"
+          >
             Login with Google
-          </button>
+          </div>
         </div>
       </form>
     </div>

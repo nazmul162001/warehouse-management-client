@@ -10,6 +10,7 @@ import NotFound from './components/NotFound/NotFound';
 import Register from './components/Register/Register';
 import { ToastContainer, toast, Flip, Zoom } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/manage" element={<ManageItem></ManageItem>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
+      <Footer></Footer>
       <ToastContainer
         position="top-center"
         autoClose={3000}

@@ -38,8 +38,8 @@ const Banner = () => {
               class="block w-full"
               alt="..."
             />
-            <div class="carousel-caption md:block absolute text-center top-1/3">
-              <h1 class="text-6xl mb-2 title">100% Fresh & Organic</h1>
+            <div class="carousel-caption md:block absolute text-center top-1/4">
+              <h1 class="text-6xl mb-2 title">100% FRESH & ORGANIC</h1>
               <p className='py-3 hidden md:block'>
               Organic and responsibly sourced food is what the modern <br /> customer demands. These name suggestions have the flexibility to provide you <br /> with ideas for an organic packaged good product, restaurant, food truck other anything else.
               </p>
@@ -53,10 +53,11 @@ const Banner = () => {
               alt="..."
             />
             <div class="carousel-caption md:block absolute text-center top-1/3">
-              <h5 class="text-xl">Second slide label</h5>
-              <p>
-                Some representative placeholder content for the second slide.
+            <h1 class="text-6xl mb-2 title">PURE DELICIOUSNESS</h1>
+              <p className='py-3 hidden md:block'>
+              Organic and responsibly sourced food is what the modern <br /> customer demands. These name suggestions have the flexibility to provide you <br /> with ideas for an organic packaged good product, restaurant, food truck other anything else.
               </p>
+              <button className='px-10 py-2 bg-yellow-400 text-black rounded-full'>Order Now</button>
             </div>
           </div>
           <div class="carousel-item relative float-left w-full">
@@ -66,10 +67,11 @@ const Banner = () => {
               alt="..."
             />
             <div class="carousel-caption md:block absolute text-center top-1/3 text-black">
-              <h5 class="text-xl">Third slide label</h5>
-              <p>
-                Some representative placeholder content for the third slide.
+            <h1 class="text-6xl mb-2 title">CHEMICAL-FREE CUISINE</h1>
+              <p className='py-3 hidden md:block'>
+              Organic and responsibly sourced food is what the modern <br /> customer demands. These name suggestions have the flexibility to provide you <br /> with ideas for an organic packaged good product, restaurant, food truck other anything else.
               </p>
+              <button className='px-10 py-2 bg-yellow-400 text-black rounded-full'>Order Now</button>
             </div>
           </div>
         </div>

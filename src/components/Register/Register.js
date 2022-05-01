@@ -50,7 +50,7 @@ const Register = () => {
 
   return (
     <div className="container flex flex-col justify-center items-center h-96">
-      <form onSubmit={handleRegister} className="input-form leading-6">
+      <form onSubmit={handleRegister} className="input-form leading-6 w-full md:w-2/5">
         <label htmlFor="email">Email</label>
         <br />
         <input

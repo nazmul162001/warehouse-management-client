@@ -13,4 +13,6 @@
  * 13. enable email & pass signIn
  * 14. install toast -> npm i react-toastify
  * 15. install react icons & hero icons
+ * 16. setUp tailwind components
+ * 
  */

@@ -56,8 +56,8 @@ const Login = () => {
   };
 
   return (
-    <div className="container flex flex-col justify-center items-center h-96">
-      <form onSubmit={handleSubmit} className="input-form leading-6">
+    <div className="flex flex-col justify-center items-center h-96">
+      <form onSubmit={handleSubmit} className="input-form leading-6 w-full md:w-2/5">
         <label htmlFor="email">Email</label>
         <br />
         <input
@@ -95,12 +95,12 @@ const Login = () => {
         </div>
         <p className="italic">
           Forget password?{' '}
-          <button
+          <span
             onClick={handleResetPassword}
-            className="underline text-sky-600"
+            className="underline text-sky-600 cursor-pointer"
           >
             reset password
-          </button>{' '}
+          </span>{' '}
         </p>
         <br />
         <div className="google-sign-ing text-center">

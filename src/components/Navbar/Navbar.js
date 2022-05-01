@@ -7,15 +7,14 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { signOut } from 'firebase/auth';
 
 const Navbar = () => {
-  const [ user ] = useAuthState(auth)
+  const [user] = useAuthState(auth);
 
   //signOUt
   const handleLogOut = (e) => {
-    e.preventDefault()
-    signOut(auth)
-  }
-  
-  
+    e.preventDefault();
+    signOut(auth);
+  };
+
   return (
     <nav className="flex justify-between items-center px-10 py-5 sticky top-0 z-50 bg-white">
       <div className="logo">
@@ -31,61 +30,59 @@ const Navbar = () => {
           Home
         </NavLink>
 
-        {
-          user ?         <NavLink
-          className={({ isActive }) => (isActive ? 'active-link' : 'link')}
-          to="/manage"
-        >
-          Manage Item
-        </NavLink>
-        :
-        ''
-        }
-        {
-          user ?         <NavLink
-          className={({ isActive }) => (isActive ? 'active-link' : 'link')}
-          to="/additem"
-        >
-          Add Item
-        </NavLink>
-        :
-        ''
-        }
-        {
-          user ?         <NavLink
-          className={({ isActive }) => (isActive ? 'active-link' : 'link')}
-          to="/myitem"
-        >
-          My Item
-        </NavLink>
-        :
-        ''
-        }
-        
-        
+        {user ? (
+          <NavLink
+            className={({ isActive }) => (isActive ? 'active-link' : 'link')}
+            to="/manage"
+          >
+            Manage Item
+          </NavLink>
+        ) : (
+          ''
+        )}
+        {user ? (
+          <NavLink
+            className={({ isActive }) => (isActive ? 'active-link' : 'link')}
+            to="/additem"
+          >
+            Add Item
+          </NavLink>
+        ) : (
+          ''
+        )}
+        {user ? (
+          <NavLink
+            className={({ isActive }) => (isActive ? 'active-link' : 'link')}
+            to="/myitem"
+          >
+            My Item
+          </NavLink>
+        ) : (
+          ''
+        )}
+
         <NavLink
           className={({ isActive }) => (isActive ? 'active-link' : 'link')}
           to="/blogs"
         >
           Blogs
         </NavLink>
-        {
-          user
-          ?
+        {user ? (
           <NavLink
             onClick={handleLogOut}
-          className={({ isActive }) => (isActive ? 'active-link' : 'link')}
-          to="/login"
-        >
-          Logout
-        </NavLink>
-          :
+            className={({ isActive }) => (isActive ? 'active-link' : 'link')}
+            to="/login"
+          >
+            Logout
+          </NavLink>
+        ) : (
           <NavLink
-          className={({ isActive }) => (isActive ? 'active-link' : 'link')}
-          to="/login"
-        >
-          Login
-        </NavLink>}
+            className={({ isActive }) => (isActive ? 'active-link' : 'link')}
+            to="/login"
+          >
+            Login
+          </NavLink>
+        )}
       </div>
     </nav>
   );

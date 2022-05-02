@@ -19,11 +19,11 @@ const Footer = () => {
             <img src={logo} alt="" />
           </div>
           <div className="social-icon flex justify-end items-center">
-            <FaFacebook className="m-2 text-5xl bg-slate-400 hover:bg-slate-700 cursor-pointer p-3 rounded-full" />
-            <FaTwitterSquare className="m-2 text-5xl bg-slate-400 hover:bg-slate-700 cursor-pointer p-3 rounded-full" />
-            <FaInstagram className="m-2 text-5xl bg-slate-400 hover:bg-slate-700 cursor-pointer p-3 rounded-full" />
-            <FaLinkedin className="m-2 text-5xl bg-slate-400 hover:bg-slate-700 cursor-pointer p-3 rounded-full" />
-            <FaYoutube className="m-2 text-5xl bg-slate-400 hover:bg-slate-700 cursor-pointer p-3 rounded-full" />
+            <FaFacebook style={{backgroundColor: '#4267B2'}} className="m-2 text-5xl text-white cursor-pointer p-2 rounded-full" />
+            <FaTwitterSquare style={{backgroundColor: '#1DA1F2'}} className="m-2 text-5xl text-white cursor-pointer p-2 rounded-full" />
+            <FaInstagram style={{backgroundColor: '#E1306C'}} className="m-2 text-5xl text-white cursor-pointer p-2 rounded-full" />
+            <FaLinkedin style={{backgroundColor: '#0077B5'}} className="m-2 text-5xl text-white cursor-pointer p-2 rounded-full" />
+            <FaYoutube style={{backgroundColor: '#FC0000'}} className="m-2 text-5xl text-white cursor-pointer p-2 rounded-full" />
           </div>
         </div>
         <div className="footer-content grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 items-center justify-center text-center">

@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
     <>
-      <footer className="">
+      <footer className="h-96 mt-10">
         <div className="footer-header flex flex-col md:flex-row justify-center md:justify-between px-16 items-center mb-3 border-b-4 border-slate-400 py-3">
           <div className="logo">
             <img src={logo} alt="" />

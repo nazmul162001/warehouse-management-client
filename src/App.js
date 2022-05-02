@@ -8,7 +8,7 @@ import ManageItem from './components/ManageItem/ManageItem';
 import Navbar from './components/Navbar/Navbar';
 import NotFound from './components/NotFound/NotFound';
 import Register from './components/Register/Register';
-import { ToastContainer, toast, Flip, Zoom } from 'react-toastify';
+import { ToastContainer, toast, Zoom } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Footer from './components/Footer/Footer';
 

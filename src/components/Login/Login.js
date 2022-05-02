@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import './Login.css';
+import {FcGoogle} from 'react-icons/fc'
+
+
 import {
   useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
@@ -56,8 +59,12 @@ const Login = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center h-96">
+    <div className="flex flex-col justify-center items-center h-screen">
       <form onSubmit={handleSubmit} className="input-form leading-6 w-full md:w-2/5">
+        <div className="vector-profile flex items-center justify-center relative pb-10 ">
+          <img className='vector-profile-image' src="https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-Vector-PNG-Pic.png" alt="" />
+        </div>
+        <h1 className='text-center pb-5 text-2xl text-gray-600 font-mono'>Login To Your Account</h1>
         <label htmlFor="email">Email</label>
         <br />
         <input
@@ -82,7 +89,7 @@ const Login = () => {
         {errorMessage}
         <br />
         <div className="login-btn flex items-center justify-between">
-          <button className="py-1 px-5 bg-orange-600 my-2 mr-3 rounded-full">
+          <button style={{background: '#2FB166'}} className="py-2 px-5  w-1/2 mb-2 mr-3 rounded-md text-white text-xl">
             Login
           </button>
 
@@ -106,9 +113,9 @@ const Login = () => {
         <div className="google-sign-ing text-center">
           <div
             onClick={() => signInWithGoogle()}
-            className="mt-3 py-2 px-5 bg-blue-700 text-white rounded-full cursor-pointer"
+            className="mt-3 py-2 px-5 bg-gray-500 text-white rounded-full cursor-pointer flex items-center justify-center"
           >
-            Login with Google
+            <FcGoogle className='text-3xl mr-3' /> Login with Google
           </div>
         </div>
       </form>

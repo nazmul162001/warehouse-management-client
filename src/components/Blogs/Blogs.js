@@ -25,6 +25,7 @@ const Blogs = () => {
         rounded-none
         transition
         focus:outline-none
+        text-2xl
       "
               type="button"
               data-bs-toggle="collapse"
@@ -32,7 +33,7 @@ const Blogs = () => {
               aria-expanded="true"
               aria-controls="collapseOne"
             >
-              Difference between javascript and nodeJs
+             <h1 className='text-4xl'>Q</h1> <sub className='pr-2 text-2xl'>1.</sub> Difference between javascript and nodeJs
             </button>
           </h2>
           <div
@@ -114,6 +115,7 @@ const Blogs = () => {
         rounded-none
         transition
         focus:outline-none
+        text-2xl
       "
               type="button"
               data-bs-toggle="collapse"
@@ -121,7 +123,7 @@ const Blogs = () => {
               aria-expanded="false"
               aria-controls="collapseTwo"
             >
-              When Should you use Nodejs and when should you use mongodb?
+            <h1 className='text-4xl'>Q</h1> <sub className='pr-2 text-2xl'>2.</sub>  When Should you use Nodejs and when should you use mongodb?
             </button>
           </h2>
           <div
@@ -131,14 +133,10 @@ const Blogs = () => {
             data-bs-parent="#accordionExample"
           >
             <div class="accordion-body py-4 px-5">
-              <strong>This is the second item's accordion body.</strong> It is
-              hidden by default, until the collapse plugin adds the appropriate
-              classes that we use to style each element. These classes control
-              the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+              <p className="italic text-gray-500">When should we use Nodejs?</p>
+              <p>Any project needs a programming environment and a runtime library that offers basic programming tools/support and can compile and/or interpret our code. Nodejs is such as tool for the Javascript programming language. There are other similar tools for other languages such as Python, Java, PHP, C#, C++, Go, etc. So, if we want to write some kind of stand-alone program or server in Javascript, then we can use nodejs for it.</p>
+              <p className="italic text-gray-500">When should we use MongoDB?</p>
+              <p>If our application needs the ability to persistently store data in a way that we can efficiently query or update it later, then we would typically use some form of database. There are dozens of popular databases. MongoDB is one such database. MariaDB, MySql, CouchDB, DynamoDB, Postgres are examples of other databases. Different databases have different strengths and different ways of using them so it's a whole different question to choose the right/best database for what we're doing.</p>
             </div>
           </div>
         </div>
@@ -160,6 +158,7 @@ const Blogs = () => {
         rounded-none
         transition
         focus:outline-none
+        text-2xl
       "
               type="button"
               data-bs-toggle="collapse"
@@ -167,7 +166,7 @@ const Blogs = () => {
               aria-expanded="false"
               aria-controls="collapseThree"
             >
-              Difference between SQL and NoSQL
+            <h1 className='text-4xl'>Q</h1> <sub className='pr-2 text-2xl'>3.</sub>  Difference between SQL and NoSQL
             </button>
           </h2>
           <div
@@ -244,6 +243,7 @@ const Blogs = () => {
         rounded-none
         transition
         focus:outline-none
+        text-2xl
       "
               type="button"
               data-bs-toggle="collapse"
@@ -251,7 +251,7 @@ const Blogs = () => {
               aria-expanded="false"
               aria-controls="collapseFour"
             >
-              What is the purpose of JWT and how does it work?
+             <h1 className='text-4xl'>Q</h1> <sub className='pr-2 text-2xl'>4.</sub> What is the purpose of JWT and how does it work?
             </button>
           </h2>
           <div

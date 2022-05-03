@@ -6,7 +6,9 @@ const InventoryItem = (props) => {
   return (
     <>
       <div className="rounded-md p-5 custom-shadow mt-20">
+        <div className="product-img flex justify-center">
         <img className="rounded-xl mb-2" src={img} alt="" />
+        </div>
         <p>
           <strong>{name}</strong>
         </p>

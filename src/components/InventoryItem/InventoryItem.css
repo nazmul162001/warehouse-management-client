@@ -3,5 +3,5 @@
   border: 2px solid rgba(19, 157, 161, 0.671);
 }
 .custom-shadow img{
-  margin-top: -70px;
+  max-height: 250px;
 }

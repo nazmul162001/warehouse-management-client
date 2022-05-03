@@ -20,7 +20,7 @@ const Speciality = () => {
         <div className="food-item">
           <img
             className="rounded-xl"
-            src="https://www.kellogggarden.com/wp-content/uploads/2016/07/Bountiful-Harvest-e1490218936705.jpg"
+            src="http://st3.depositphotos.com/8000700/13130/i/450/depositphotos_131305574-Close-up-of-fresh-ripe-tomatoes-eggplant-and-parsley-Group-of-tomatoes-eggplant-and-parsley-Red-and-yellow-tomatoes-tomatoes-and-parsley-in-drops-of-water.jpg"
             alt=""
           />
           <h2 className="text-2xl py-3">Natural Radiance</h2>

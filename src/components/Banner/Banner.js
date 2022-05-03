@@ -1,9 +1,10 @@
 import React from 'react';
 import './Banner.css'
+import {MdOutlineAddShoppingCart} from 'react-icons/md';
 
 const Banner = () => {
   return (
-    <section className="banner w-full h-4/5">
+    <section id='Banner' className="banner w-full h-4/5">
       <div
         id="carouselExampleCaptions"
         class="carousel slide relative"
@@ -43,7 +44,7 @@ const Banner = () => {
               <p className='py-3 hidden md:block'>
               Organic and responsibly sourced food is what the modern <br /> customer demands. These name suggestions have the flexibility to provide you <br /> with ideas for an organic packaged good product, restaurant, food truck other anything else.
               </p>
-              <button className='px-10 py-2 bg-yellow-400 text-black rounded-full'>Order Now</button>
+              <button className='px-10 py-2 bg-yellow-400 text-black rounded-full flex justify-center mx-auto items-center'>Order Now <MdOutlineAddShoppingCart className='mx-2 text-xl' /></button>
             </div>
           </div>
           <div class="carousel-item relative float-left w-full">
@@ -55,9 +56,9 @@ const Banner = () => {
             <div class="carousel-caption md:block absolute text-center top-1/3">
             <h1 class="text-6xl mb-2 title">PURE DELICIOUSNESS</h1>
               <p className='py-3 hidden md:block'>
-              Organic and responsibly sourced food is what the modern <br /> customer demands. These name suggestions have the flexibility to provide you <br /> with ideas for an organic packaged good product, restaurant, food truck other anything else.
+              Diet and lifestyle are not only related to wellbeing but also have dramatic effects on the burdens of ill health and non-communicable diseases. Drawing upon anthropological evidence for human evolution and the chemistry of the brain, as well on the physiology of taste, a brief review is provided on the effects of food composition and food flavor on health, wellbeing, and the quality of life.
               </p>
-              <button className='px-10 py-2 bg-yellow-400 text-black rounded-full'>Order Now</button>
+              <button className='px-10 py-2 bg-yellow-400 text-black rounded-full flex justify-center mx-auto items-center'>Order Now <MdOutlineAddShoppingCart className='mx-2 text-xl' /></button>
             </div>
           </div>
           <div class="carousel-item relative float-left w-full">
@@ -69,9 +70,9 @@ const Banner = () => {
             <div class="carousel-caption md:block absolute text-center top-1/3 text-black">
             <h1 class="text-6xl mb-2 title">CHEMICAL-FREE CUISINE</h1>
               <p className='py-3 hidden md:block'>
-              Organic and responsibly sourced food is what the modern <br /> customer demands. These name suggestions have the flexibility to provide you <br /> with ideas for an organic packaged good product, restaurant, food truck other anything else.
+              More and more organic foods are showing up in the produce aisles of local grocery stores. It can be confusing to know when to buy organic versions of your favorite foods. Many people buy organic food because they are worried about the environment. And many people buy organic food to avoid chemicals, especially pesticides, in their food.
               </p>
-              <button className='px-10 py-2 bg-yellow-400 text-black rounded-full'>Order Now</button>
+              <button className='px-10 py-2 bg-yellow-400 text-black rounded-full flex justify-center mx-auto items-center'>Order Now <MdOutlineAddShoppingCart className='mx-2 text-xl' /></button>
             </div>
           </div>
         </div>

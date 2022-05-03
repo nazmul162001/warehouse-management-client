@@ -55,35 +55,35 @@ const Footer = () => {
         </div>
         <div className="footer-content grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 items-center justify-center text-center">
           {/* Company  */}
-          <div className="company my-2">
-            <h2 className="company-title">Company</h2>
-            <h3>Home</h3>
-            <h3>Contact Us</h3>
-            <h3>About Us</h3>
-            <h3>Get Started</h3>
+          <div className="company my-2 flex flex-col">
+            <h2>Company</h2>
+            <Link to='/'>Home</Link>
+            <Link to='/login'>Contact Us</Link>
+            <Link to='/'>About Us</Link>
+            <Link to='/'>Get Started</Link>
           </div>
 
           {/* service  */}
-          <div className="services my-2">
-            <h2>Services</h2>
-            <h3>Deliver Organic Food</h3>
-            <h3>On Time Delivery</h3>
-            <h3>Home Delivery</h3>
-            <h3>Customer Satisfaction</h3>
+          <div className="services my-2 flex flex-col">
+            <h2>Service</h2>
+            <Link to='/'>Deliver Organic Food</Link>
+            <Link to='/'>On Time Delivery</Link>
+            <Link to='/'>Home Delivery</Link>
+            <Link to='/'>Customer Satisfaction</Link>
           </div>
 
           {/* Account  */}
-          <div className="account my-2">
+          <div className="account my-2 flex flex-col">
             <h2>Account</h2>
-            <h3>Profile</h3>
-            <h3>My Account</h3>
-            <h3>Preferrence</h3>
-            <h3>Purchase</h3>
+            <Link to='/'>Profile</Link>
+            <Link to='/'>My Account</Link>
+            <Link to='/'>Preferrence</Link>
+            <Link to='/'>Purchase</Link>
           </div>
 
           {/* subscribe  */}
           <div className="subscript text-center md:text-left my-2">
-            <h2>Newsletter</h2>
+            <Link to='/'>Newsletter</Link>
             <form onSubmit={handleJoin}>
               <input
                 className="border-2 border-slate-400 rounded-full my-2 px-2"
@@ -104,7 +104,7 @@ const Footer = () => {
           <div className="copyright-text">
             <p>
               Copyright &copy;2022{' '}
-              <Link className="text-sky-500 italic" to="/">
+              <Link to='/' className="text-sky-500 italic">
                 Kraft Foods
               </Link>{' '}
               All right reserve

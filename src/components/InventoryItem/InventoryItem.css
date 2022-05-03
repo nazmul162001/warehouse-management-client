@@ -3,5 +3,14 @@
   border: 2px solid rgba(19, 157, 161, 0.671);
 }
 .custom-shadow img{
-  max-height: 250px;
+  height: 250px;
+}
+.price{
+  font-family: 'Abril Fatface', cursive;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  font-size: 22px;
+}
+.quantity{
+  font-family: 'Abril Fatface', cursive;
 }

@@ -1,16 +1,16 @@
 [
   {
       "_id": 1,
-      "name": "ENGINE DIAGNOSTIC",
+      "name": "Banana",
       "price": "300",
       "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
-      "img": "https://imagizer.imageshack.com/img924/235/aSFK1Z.jpg",
+      "img": "https://imagizer.imageshack.com/img923/8565/KOTODH.jpg",
       "quantity": 1,
       "supplier": "nazmul"
   },
   {
       "_id": 2,
-      "name": "WHEEL ALIGNMENT",
+      "name": "Tomato",
       "price": "100",
       "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
       "img": "https://imagizer.imageshack.com/img924/533/IerVmI.jpg",
@@ -19,7 +19,7 @@
   },
   {
       "_id": 3,
-      "name": "OIL CHANGING",
+      "name": "Pineapple",
       "price": "150",
       "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
       "img": "https://imagizer.imageshack.com/img923/9651/sAnthO.jpg",
@@ -28,7 +28,7 @@
   },
   {
       "_id": 4,
-      "name": "BRAKE REPARING",
+      "name": "Apple",
       "price": "180",
       "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
       "img": "https://imagizer.imageshack.com/img922/6016/aYitgO.jpg",
@@ -37,7 +37,7 @@
   },
   {
       "_id": 5,
-      "name": "WASH AND GLASSING",
+      "name": "Pomegranate",
       "price": "100",
       "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
       "img": "https://imagizer.imageshack.com/img923/85/9nNiOx.png",
@@ -46,7 +46,7 @@
   },
   {
       "_id": 6,
-      "name": "COMPLETE ANALYSIS",
+      "name": "Orange",
       "price": "300",
       "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa",
       "img": "https://imagizer.imageshack.com/img924/5792/GpVPP5.jpg",
@@ -55,10 +55,19 @@
   },
   {
     "_id": 7,
-    "name": "BRAKE REPARING",
+    "name": "Watermelon",
     "price": "280",
     "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
     "img": "https://imagizer.imageshack.com/img924/9404/BDGHrb.jpg",
+    "quantity": 1,
+    "supplier": "nazmul"
+},
+  {
+    "_id": 8,
+    "name": "Papaya",
+    "price": "250",
+    "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+    "img": "https://imagizer.imageshack.com/img924/235/aSFK1Z.jpg",
     "quantity": 1,
     "supplier": "nazmul"
 }

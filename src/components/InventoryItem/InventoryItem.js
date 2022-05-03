@@ -7,21 +7,23 @@ const InventoryItem = (props) => {
     <>
       <div className="rounded-md p-5 custom-shadow mt-20">
         <div className="product-img flex justify-center">
-        <img className="rounded-xl mb-2" src={img} alt="" />
+          <img className="rounded-xl mb-2" src={img} alt="" />
         </div>
         <p>
           <strong>{name}</strong>
         </p>
-        <p>Price: ${price}</p>
-        <p>
-          Quantity:{' '}
-          <span
-            style={{ backgroundColor: 'rgba(255, 0, 0, 0.20)' }}
-            className="py-1 px-3 rounded-full"
-          >
-            {quantity}
-          </span>{' '}
-        </p>
+        <div className="product-info flex justify-between py-3">
+          <p className='font-bold price'>${price}</p>
+          <p className='quantity text-gray-800'>
+           <strong className='text-2xl'>Q</strong> uantity:{' '}
+            <span
+              style={{ backgroundColor: 'rgba(255, 0, 0, 0.20)' }}
+              className="py-1 px-3 rounded-full"
+            >
+              {quantity}
+            </span>{' '}
+          </p>
+        </div>
         <p className="my-2 text-gray-500"> {description} </p>
         <p className="italic my-2"> Supplier: {supplier} </p>
         <div className="text-center">

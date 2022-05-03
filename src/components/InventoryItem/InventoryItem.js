@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './InventoryItem.css';
+import { RiChatHeartLine } from 'react-icons/ri';
 
 const InventoryItem = (props) => {
   const { name, description, price, supplier, img, quantity } = props.item;
@@ -14,9 +15,9 @@ const InventoryItem = (props) => {
           <strong>{name}</strong>
         </p>
         <div className="product-info flex justify-between py-3">
-          <p className='font-bold price'>${price}</p>
-          <p className='quantity text-gray-800'>
-           <strong className='text-2xl'>Q</strong> uantity:{' '}
+          <p className="font-bold price">${price}</p>
+          <p className="quantity text-gray-800">
+            <strong className="text-2xl">Q</strong> uantity:{' '}
             <span
               style={{ backgroundColor: 'rgba(255, 0, 0, 0.20)' }}
               className="py-1 px-3 rounded-full"
@@ -26,9 +27,18 @@ const InventoryItem = (props) => {
           </p>
         </div>
         <p className="my-2 text-gray-500"> {description} </p>
-        <p className="italic my-2"> Supplier: {supplier} </p>
+        <div className="supplier flex items-center justify-between pb-5">
+          <p className="italic my-2"> Supplier: {supplier} </p>
+          <p>
+            {' '}
+            <Link to='/login'><RiChatHeartLine className='text-3xl mr-3 text-orange-500' /></Link>{' '}
+          </p>
+        </div>
         <div className="text-center w-full">
-          <Link to='inventory' className="bg-slate-700 w-full py-2 px-5 rounded-md text-white">
+          <Link
+            to="inventory"
+            className="bg-slate-700 w-full py-2 px-5 rounded-md text-white"
+          >
             Stock Update
           </Link>
         </div>

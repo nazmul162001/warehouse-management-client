@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import './Login.css';
 import {FcGoogle} from 'react-icons/fc'
@@ -22,6 +22,13 @@ const Login = () => {
   const [sendPasswordResetEmail, sending, resetError] =
     useSendPasswordResetEmail(auth);
 
+  // require auth
+  const location = useLocation();
+  const from = location.state?.from?.pathname || '/';
+  if (user || googleUser) {
+    navigate(from, { replace: true });
+  }
+
 
     // show error message
   let errorMessage;
@@ -31,9 +38,9 @@ const Login = () => {
     );
   }
 
-  if (googleUser || user) {
-    navigate('/');
-  }
+  // if (googleUser || user) {
+  //   navigate('/');
+  // }
 
   // submit form
   const handleSubmit = (e) => {

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './InventoryItem.css';
 
 const InventoryItem = (props) => {
@@ -26,10 +27,10 @@ const InventoryItem = (props) => {
         </div>
         <p className="my-2 text-gray-500"> {description} </p>
         <p className="italic my-2"> Supplier: {supplier} </p>
-        <div className="text-center">
-          <button className="bg-slate-700 w-full py-2 px-5 rounded-md text-white">
+        <div className="text-center w-full">
+          <Link to='inventory' className="bg-slate-700 w-full py-2 px-5 rounded-md text-white">
             Stock Update
-          </button>
+          </Link>
         </div>
       </div>
     </>

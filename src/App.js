@@ -11,6 +11,8 @@ import Register from './components/Register/Register';
 import { ToastContainer, toast, Zoom } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Footer from './components/Footer/Footer';
+import RequireAuth from './components/RequireAuth/RequireAuth';
+import InventoryDetails from './components/InventoryDetails/InventoryDetails';
 
 function App() {
   return (
@@ -23,6 +25,11 @@ function App() {
         <Route path="/logout" element={<LogOut></LogOut>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
         <Route path="/manage" element={<ManageItem></ManageItem>}></Route>
+        <Route path='/inventory' element={
+          <RequireAuth>
+            <InventoryDetails></InventoryDetails>
+          </RequireAuth>
+        }></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>

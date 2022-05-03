@@ -10,7 +10,7 @@ const Speciality = () => {
         <Link to='/' className='flex items-center hover:text-orange-500'>
           {' '}
           <p className="pr-3 text-xl" to="/">
-            See All Inventories{' '}
+            Manage Inventories{' '}
           </p>
           <FaArrowRight />
         </Link>

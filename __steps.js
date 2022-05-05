@@ -14,5 +14,7 @@
  * 14. install toast -> npm i react-toastify
  * 15. install react icons & hero icons
  * 16. setUp tailwind components
+ * 17. setUp server side
+ * 18. install hero icons
  * 
  */

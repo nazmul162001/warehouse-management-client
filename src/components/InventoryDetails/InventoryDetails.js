@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import cart from '../../images/cart.png';
 import deliverIcon from '../../images/delivery.png';
+import { FaArrowRight } from 'react-icons/fa';
 import './InventoryDetails.css';
 
 const InventoryDetails = () => {
@@ -136,6 +137,17 @@ const InventoryDetails = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* manage inventory  */}
+      <div className="see-more  py-4 mr-14 flex items-center justify-end">
+        <Link to='/manage' className='flex items-center hover:text-orange-500'>
+          {' '}
+          <p className="pr-3 text-xl">
+            Manage Inventories{' '}
+          </p>
+          <FaArrowRight />
+        </Link>
       </div>
       {/* reStock form  */}
       <form onSubmit={handleQuantity} className="text-center">

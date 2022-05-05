@@ -33,13 +33,14 @@ const AllInventory = (props) => {
             <Link to='/login'><RiChatHeartLine className='text-3xl mr-3 text-orange-500' /></Link>{' '}
           </p>
         </div>
-        <div className="text-center w-full">
+        <div className="w-full flex justify-between items-center">
           <Link
             to={`inventory/${_id}`}
-            className="bg-slate-700 w-full py-2 px-5 rounded-md text-white"
+            className="bg-slate-700 w-full py-2 px-5 rounded-md text-white mr-1"
           >
             Stock Update
           </Link>
+          <button  className=" bg-red-600 w-full py-2 px-5 rounded-md text-white ml-1">Delete</button>
         </div>
       </div>
     </>

@@ -7,9 +7,9 @@ const Speciality = () => {
   return (
     <div className="our-speciality px-16">
       <div className="see-more  py-4 mr-14 flex items-center justify-end">
-        <Link to='/' className='flex items-center hover:text-orange-500'>
+        <Link to='/manage' className='flex items-center hover:text-orange-500'>
           {' '}
-          <p className="pr-3 text-xl" to="/">
+          <p className="pr-3 text-xl">
             Manage Inventories{' '}
           </p>
           <FaArrowRight />

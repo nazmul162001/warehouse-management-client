@@ -25,7 +25,7 @@ function App() {
         <Route path="/logout" element={<LogOut></LogOut>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
         <Route path="/manage" element={<ManageItem></ManageItem>}></Route>
-        <Route path='/inventory' element={
+        <Route path='/inventory/:id' element={
           <RequireAuth>
             <InventoryDetails></InventoryDetails>
           </RequireAuth>

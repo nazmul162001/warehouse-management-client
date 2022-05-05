@@ -4,7 +4,7 @@ import './InventoryItem.css';
 import { RiChatHeartLine } from 'react-icons/ri';
 
 const InventoryItem = (props) => {
-  const { name, description, price, supplier, img, quantity } = props.item;
+  const { name, description, price, supplier, img, quantity , _id } = props.item;
   return (
     <>
       <div className="rounded-md p-5 custom-shadow mt-20">
@@ -36,7 +36,7 @@ const InventoryItem = (props) => {
         </div>
         <div className="text-center w-full">
           <Link
-            to="inventory"
+            to={`inventory/${_id}`}
             className="bg-slate-700 w-full py-2 px-5 rounded-md text-white"
           >
             Stock Update

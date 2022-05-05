@@ -30,6 +30,7 @@ const Login = () => {
   }
 
 
+
     // show error message
   let errorMessage;
   if (googleError) {
@@ -45,6 +46,7 @@ const Login = () => {
   // submit form
   const handleSubmit = (e) => {
     e.preventDefault();
+
     const email = e.target.email.value;
     const password = e.target.password.value;
 

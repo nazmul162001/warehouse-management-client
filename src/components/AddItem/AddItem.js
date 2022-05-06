@@ -1,18 +1,56 @@
 import React from 'react';
-import './AddItem.css'
+import { toast } from 'react-toastify';
+import './AddItem.css';
 
 const AddItem = () => {
+  const handleAddItem = (e) => {
+    e.preventDefault();
+    const supplier = e.target.suppliarName.value;
+    const name = e.target.itemName.value;
+    const email = e.target.email.value;
+    const price = e.target.price.value;
+    const quantity = e.target.quantity.value;
+    const description = e.target.description.value;
+    const img = e.target.imgUrl.value;
+
+    // console.log(suppliarName, itemName, email, price, quantity, description, imgUrl);
+
+    const url = `http://localhost:5000/service`;
+    fetch(url, {
+      method: 'POST',
+      body: JSON.stringify({
+        supplier,
+        name,
+        email,
+        price,
+        quantity,
+        description,
+        img,
+      }),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        e.target.reset();
+        toast.success('Item Successfully added');
+      });
+  };
+
   return (
     <div className="add-item w-full h-full mt-5">
-      <form className=" w-1/2 mx-auto">
+      <form onSubmit={handleAddItem} className=" w-1/2 mx-auto">
         <h1 className="text-center text-2xl text-gray-500 mb-5">
           Add Your Item
         </h1>
         {/* name */}
-        <div class="form-floating mb-3 w-full">
+        <div className="form-floating mb-3 w-full">
           <input
             type="text"
-            class="form-control
+            name="suppliarName"
+            className="form-control
       block
       w-full
       px-3
@@ -31,15 +69,16 @@ const AddItem = () => {
             placeholder="supplier name"
             required
           />
-          <label for="floatingInput" class="text-gray-700">
+          <label htmlFor="floatingInput" className="text-gray-700">
             Supplier Name
           </label>
         </div>
         {/* Email  */}
-        <div class="form-floating mb-3 w-full">
+        <div className="form-floating mb-3 w-full">
           <input
             type="email"
-            class="form-control
+            name="email"
+            className="form-control
       block
       w-full
       px-3
@@ -58,16 +97,17 @@ const AddItem = () => {
             placeholder="name@example.com"
             required
           />
-          <label for="floatingInput" class="text-gray-700">
+          <label htmlFor="floatingInput" className="text-gray-700">
             Email address
           </label>
         </div>
 
         {/* item name  */}
-        <div class="form-floating mb-3 w-full">
+        <div className="form-floating mb-3 w-full">
           <input
             type="text"
-            class="form-control
+            name="itemName"
+            className="form-control
       block
       w-full
       px-3
@@ -86,16 +126,17 @@ const AddItem = () => {
             placeholder="item name"
             required
           />
-          <label for="floatingInput" class="text-gray-700">
+          <label htmlFor="floatingInput" className="text-gray-700">
             Item Name
           </label>
         </div>
 
         {/* Price  */}
-        <div class="form-floating mb-3 w-full">
+        <div className="form-floating mb-3 w-full">
           <input
             type="number"
-            class="form-control
+            name="price"
+            className="form-control
       block
       w-full
       px-3
@@ -114,16 +155,17 @@ const AddItem = () => {
             placeholder="Price"
             required
           />
-          <label for="floatingInput" class="text-gray-700">
+          <label htmlFor="floatingInput" className="text-gray-700">
             Price
           </label>
         </div>
 
         {/* quantity  */}
-        <div class="form-floating mb-3 w-full">
+        <div className="form-floating mb-3 w-full">
           <input
             type="number"
-            class="form-control
+            name="quantity"
+            className="form-control
       block
       w-full
       px-3
@@ -142,16 +184,17 @@ const AddItem = () => {
             placeholder="quantity"
             required
           />
-          <label for="floatingInput" class="text-gray-700">
+          <label htmlFor="floatingInput" className="text-gray-700">
             Quantity
           </label>
         </div>
 
         {/* Description  */}
-        <div class="form-floating mb-3 w-full">
+        <div className="form-floating mb-3 w-full">
           <textarea
             type="text"
-            class="form-control
+            name="description"
+            className="form-control
       block
       w-full
       px-3
@@ -170,16 +213,17 @@ const AddItem = () => {
             placeholder="description"
             required
           />
-          <label for="floatingInput" class="text-gray-700">
+          <label htmlFor="floatingInput" className="text-gray-700">
             Description
           </label>
         </div>
 
         {/* img url  */}
-        <div class="form-floating mb-3 w-full">
+        <div className="form-floating mb-3 w-full">
           <input
             type="text"
-            class="form-control
+            name="imgUrl"
+            className="form-control
       block
       w-full
       px-3
@@ -198,12 +242,16 @@ const AddItem = () => {
             placeholder="image URL"
             required
           />
-          <label for="floatingInput" class="text-gray-700">
+          <label htmlFor="floatingInput" className="text-gray-700">
             Image URL
           </label>
         </div>
         <div className="submit-form bg-gray-500 rounded-full">
-          <input className='w-full py-2 text-white' type="submit" value="Add Item" />
+          <input
+            className="w-full py-2 text-white"
+            type="submit"
+            value="Add Item"
+          />
         </div>
       </form>
     </div>

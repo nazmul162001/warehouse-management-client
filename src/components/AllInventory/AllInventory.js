@@ -4,6 +4,24 @@ import { RiChatHeartLine } from 'react-icons/ri';
 
 const AllInventory = (props) => {
   const { name, description, price, supplier, img, quantity , _id } = props.item;
+
+
+  // handle delete 
+  const handleDelete = id => {
+    const proceed = window.confirm('Are You Sure?')
+    if(proceed){
+      const url = `http://localhost:5000/service/${id}`
+      fetch(url, {
+        method: 'DELETE'
+      })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+      })
+    }
+  }
+  
+  
   return (
     <>
       <div className="rounded-md p-5 custom-shadow mt-20">
@@ -40,7 +58,7 @@ const AllInventory = (props) => {
           >
             Stock Update
           </Link>
-          <button  className=" bg-red-600 w-full py-2 px-5 rounded-md text-white ml-1">Delete</button>
+          <button onClick={()=>handleDelete(_id)}  className=" bg-red-600 w-full py-2 px-5 rounded-md text-white ml-1">Delete</button>
         </div>
       </div>
     </>

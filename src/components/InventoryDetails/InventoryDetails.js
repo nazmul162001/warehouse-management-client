@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import cart from '../../images/cart.png';
+import cart from '../../images/cart2.png';
 import deliverIcon from '../../images/delivery.png';
 import { FaArrowRight } from 'react-icons/fa';
 import './InventoryDetails.css';
@@ -186,13 +186,13 @@ const InventoryDetails = () => {
           </div>
         </div>
         <div className="submit ">
-          <button className="deliver flex justify-center items-center mx-auto">
+          <button className="deliver flex justify-center items-center mx-auto h-14">
             <input
               className="py-2 px-5 rounded"
               type="submit"
               value="ReStock items"
             />
-            <img className="h-8" src={cart} alt="" />
+            <img className="h-10 mr-3" src={cart} alt="" />
           </button>
         </div>
       </form>

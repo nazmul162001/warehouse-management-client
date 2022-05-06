@@ -4,9 +4,9 @@ const Stock = () => {
   return (
     <div>
       <section className="overflow-hidden text-gray-700">
-        <h1 className="text-center text-5xl text-gray-500 my-5">
-          Available in our Stock
-        </h1>
+      <h1 className="text-center text-5xl w-full my-10 text-gray-500 bottom-title relative">
+        Availabe in our Stock
+      </h1>
         <div className="container px-5 py-2 mx-auto lg:pt-24 lg:px-32">
           <div className="flex flex-wrap -m-1 md:-m-2">
             <div className="flex flex-wrap w-1/2">

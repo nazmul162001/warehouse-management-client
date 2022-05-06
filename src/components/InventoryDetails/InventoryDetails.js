@@ -4,23 +4,61 @@ import cart from '../../images/cart2.png';
 import deliverIcon from '../../images/delivery.png';
 import { FaArrowRight } from 'react-icons/fa';
 import './InventoryDetails.css';
+import { ToastContainer, toast, Zoom } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const InventoryDetails = () => {
   const [item, setItem] = useState({});
   const { name, img, price, description, supplier, quantity, _id } = item;
   const { id } = useParams();
 
+  const [reStack, setReStack] = useState({});
+  // console.log(reStack);
+
+  // handle quantity
+  const handleQuantity = (e) => {
+    // e.preventDefault();
+    // // const number = e.target.number.value;
+    // const re = /^[0-9\b]+$/;
+    // if (e.target.number.value === '' || re.test(e.target.value)) {
+    //   setReStack(e.target.number.value);
+    //   e.target.number.value = 0;
+    // }
+    
+    e.preventDefault();
+    const number = e.target.number.value;
+    const myQuantity = parseInt(quantity) + parseInt(number);
+    setReStack(myQuantity)
+
+    
+    
+  };
+
   useEffect(() => {
     fetch(`http://localhost:5000/service/${id}`)
       .then((res) => res.json())
       .then((data) => setItem(data));
-  }, [id]);
+  }, [id, item]);
 
-  // handle quantity
-  const handleQuantity = (e) => {
-    e.preventDefault();
-    const number = e.target.number.value;
-    alert(number);
+  // handle deliver
+  const handleDeliver = () => {
+    if (quantity <= 0) {
+      toast.error('No more item available for deliver');
+    } else {
+      const oldQuantity = parseInt(quantity);
+      const updateQuantity = oldQuantity - 1;
+      const url = `http://localhost:5000/service/${id}`;
+      fetch(url, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ quantity: updateQuantity }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          toast.success('Deliver 1 item')
+        });
+    }
   };
 
   return (
@@ -122,10 +160,14 @@ const InventoryDetails = () => {
                     </tr>
                     <tr className="bg-white border-b deliver">
                       <td
+                        onClick={handleDeliver}
                         colspan="2"
                         className="text-sm font-light px-6 py-4 whitespace-nowrap text-center border-r h-auto w-52 cursor-pointer "
                       >
-                        <button className="mx-auto flex justify-center items-center text-xl text-gray-500">
+                        <button
+                          // onClick={handleDeliver}
+                          className="mx-auto flex justify-center items-center text-xl text-gray-500"
+                        >
                           Delivered{' '}
                           <img className="h-6 mx-3" src={deliverIcon} alt="" />{' '}
                         </button>
@@ -141,11 +183,9 @@ const InventoryDetails = () => {
 
       {/* manage inventory  */}
       <div className="see-more  py-4 mr-14 flex items-center justify-end">
-        <Link to='/manage' className='flex items-center hover:text-orange-500'>
+        <Link to="/manage" className="flex items-center hover:text-orange-500">
           {' '}
-          <p className="pr-3 text-xl">
-            Manage Inventories{' '}
-          </p>
+          <p className="pr-3 text-xl">Manage Inventories </p>
           <FaArrowRight />
         </Link>
       </div>
@@ -188,6 +228,7 @@ const InventoryDetails = () => {
         <div className="submit ">
           <button className="deliver flex justify-center items-center mx-auto h-14">
             <input
+              // onChange={handleInput}
               className="py-2 px-5 rounded"
               type="submit"
               value="ReStock items"
@@ -196,6 +237,18 @@ const InventoryDetails = () => {
           </button>
         </div>
       </form>
+      <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        transition={Zoom}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </div>
   );
 };

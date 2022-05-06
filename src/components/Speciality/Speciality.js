@@ -15,7 +15,9 @@ const Speciality = () => {
           <FaArrowRight />
         </Link>
       </div>
-      <h1 className="text-5xl text-center w-full  my-10">Our Speciality </h1>
+      <h1 className="text-center text-5xl w-full my-10 text-gray-500 bottom-title relative">
+        Our Speciality
+      </h1>
       <div className="food-content grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         <div className="food-item">
           <img

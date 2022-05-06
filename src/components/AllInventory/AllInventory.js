@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { RiChatHeartLine } from 'react-icons/ri';
+import useInventory from '../../Hooks/useInventory';
 
 const AllInventory = (props) => {
   const { name, description, price, supplier, img, quantity , _id } = props.item;
-
+  const [services, setServices] = useInventory();
+  // console.log(services);
 
   // handle delete 
   const handleDelete = id => {
@@ -17,6 +19,8 @@ const AllInventory = (props) => {
       .then(res => res.json())
       .then(data => {
         console.log(data);
+        const remaining = services.filter(service => service._id !== id)
+        setServices(remaining);
       })
     }
   }

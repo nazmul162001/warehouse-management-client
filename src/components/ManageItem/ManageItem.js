@@ -5,6 +5,7 @@ import AllInventory from '../AllInventory/AllInventory';
 const ManageItem = () => {
 const [item, setItem]= useInventory();
 
+
   
   return (
 <section className='w-full'>

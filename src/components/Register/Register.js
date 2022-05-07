@@ -6,6 +6,7 @@ import {
 } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { toast } from 'react-toastify';
+import {FcGoogle} from 'react-icons/fc'
 
 const Register = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
@@ -49,8 +50,12 @@ const Register = () => {
   };
 
   return (
-    <div className="container flex flex-col justify-center items-center h-96">
-      <form onSubmit={handleRegister} className="input-form leading-6 w-full md:w-2/5">
+    <div className="container flex flex-col justify-center items-center h-full">
+      <form onSubmit={handleRegister} className="input-form mt-[70px] leading-6 w-full md:w-2/5">
+      <div className="vector-profile flex items-center justify-center relative pb-10 ">
+          <img className='vector-profile-image' src="https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-Vector-PNG-Pic.png" alt="" />
+        </div>
+        <h1 className='text-center pb-5 text-2xl text-gray-600 font-mono'>Register To Your Account</h1>
         <label htmlFor="email">Email</label>
         <br />
         <input
@@ -84,8 +89,8 @@ const Register = () => {
         {errorMessage}
         <p className="italic text-red-500">{err}</p>
         <br />
-        <div className="login-btn flex items-center justify-between">
-          <button className="py-1 px-5 bg-orange-600 my-2 mr-3 rounded-full">
+        <div className="login-btn flex items-center justify-center flex-col">
+        <button style={{background: '#2FB166'}} className="py-2 px-5  w-full mb-2 mr-3 rounded-md text-white text-xl">
             Register
           </button>
           <p>
@@ -96,12 +101,20 @@ const Register = () => {
           </p>
         </div>
         <br />
+        
+        {/* Devider  */}
+        <div className="devider flex items-center justify-center">
+        <div className="left-line w-full h-[2px] bg-gray-500"></div>
+        <p className='px-3'>or</p>
+        <div className="right-line w-full h-[2px] bg-gray-500"></div>
+        </div>
+        
         <div className="google-sign-ing text-center">
           <div
             onClick={() => signInWithGoogle()}
-            className="mt-3 py-2 px-5 bg-blue-700 text-white rounded-full cursor-pointer"
+            className="mt-3 py-2 px-5 bg-blue-700 text-white rounded-full cursor-pointer flex items-center justify-center"
           >
-            Login with Google
+            <FcGoogle className='text-3xl mr-3' /> Login with Google
           </div>
         </div>
       </form>

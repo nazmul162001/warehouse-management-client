@@ -5,14 +5,13 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
-// import './styles.css';
 // import required modules
 import { EffectCoverflow, FreeMode, Pagination } from 'swiper';
 import './Review.css';
 
 const Review = () => {
   return (
-    <div className='px-10'>
+    <div className='px-10 review'>
       <h1 className="text-center text-5xl w-full my-10 text-gray-500 bottom-title relative">
         What Our Customer Say
       </h1>

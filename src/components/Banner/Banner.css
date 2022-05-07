@@ -1,6 +1,7 @@
-.banner img{
-  max-height: 600px;
-}
+/* .banner img{
+  max-height: 100vh;
+  filter: blur(3px);
+} */
 
 h1{
   font-family: 'Abril Fatface', cursive;

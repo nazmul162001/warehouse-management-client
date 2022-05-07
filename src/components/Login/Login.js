@@ -10,6 +10,7 @@ import {
   useSignInWithGoogle,
 } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
+import axios from 'axios';
 
 const Login = () => {
   const [signInWithGoogle, googleUser, googleLoading, googleError] =
@@ -24,7 +25,8 @@ const Login = () => {
   // require auth
   const location = useLocation();
   const from = location.state?.from?.pathname || '/';
-  if (user || googleUser) {
+
+  if (googleUser) {
     navigate(from, { replace: true });
   }
 
@@ -36,18 +38,18 @@ const Login = () => {
     );
   }
 
-  // if (googleUser || user) {
-  //   navigate('/');
-  // }
-
   // submit form
-  const handleSubmit = (e) => {
+  const handleSubmit = async e => {
     e.preventDefault();
 
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    signInWithEmailAndPassword(email, password);
+    await signInWithEmailAndPassword(email, password);
+    const {data} = await axios.post('http://localhost:5000/login', {email})
+    // console.log(data);
+    localStorage.setItem('accessToken',data.accessToken);
+    navigate(from, { replace: true });
   };
   // get email from input //
   const handleEmail = (e) => {

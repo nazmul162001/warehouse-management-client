@@ -11,7 +11,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 // import required modules
-import { Pagination, Navigation } from 'swiper';
+import { Pagination, Navigation, Autoplay } from 'swiper';
 
 
 
@@ -22,11 +22,15 @@ const Banner = () => {
         slidesPerView={1}
         spaceBetween={30}
         loop={true}
+        autoplay={{
+          delay: 4000,
+          disableOnInteraction: false,
+        }}
         pagination={{
           clickable: true,
         }}
         navigation={true}
-        modules={[Pagination, Navigation]}
+        modules={[Pagination, Navigation, Autoplay]}
         className="mySwiper"
       >
         <SwiperSlide>

@@ -12,27 +12,31 @@ const InventoryDetails = () => {
   const { name, img, price, description, supplier, quantity, _id } = item;
   const { id } = useParams();
 
-  const [reStack, setReStack] = useState({});
-  // console.log(reStack);
+  const [reStack, setReStack] = useState(0);
+  console.log(reStack);
 
   // handle quantity
-  const handleQuantity = (e) => {
+  const handleInput = (e) => {
     // e.preventDefault();
-    // // const number = e.target.number.value;
-    // const re = /^[0-9\b]+$/;
-    // if (e.target.number.value === '' || re.test(e.target.value)) {
-    //   setReStack(e.target.number.value);
-    //   e.target.number.value = 0;
-    // }
-    
-    e.preventDefault();
-    const number = e.target.number.value;
-    const myQuantity = parseInt(quantity) + parseInt(number);
-    setReStack(myQuantity)
-
-    
-    
+    const re = /^[0-9\b]+$/;
+    if (e.target.value === '' || re.test(e.target.value)) {
+      setReStack(e.target.value);
+      e.target.value = '';
+    }
   };
+
+  const handleQuantity = e => {
+    e.preventDefault();
+    const url = `http://localhost:5000/service/${id}`;
+    fetch(url, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ quantity: +reStack + +quantity }),
+    })
+    setReStack(0)
+    toast.success('ReStock item')
+  }
+
 
   useEffect(() => {
     fetch(`http://localhost:5000/service/${id}`)
@@ -200,6 +204,8 @@ const InventoryDetails = () => {
               <h1 className="text-2xl text-slate-600 mt-5">ReStock the item</h1>
             </label>
             <input
+            onChange={handleInput}
+              value={reStack}
               type="number"
               name="number"
               class="
@@ -228,7 +234,6 @@ const InventoryDetails = () => {
         <div className="submit ">
           <button className="deliver flex justify-center items-center mx-auto h-14">
             <input
-              // onChange={handleInput}
               className="py-2 px-5 rounded"
               type="submit"
               value="ReStock items"

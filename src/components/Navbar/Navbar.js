@@ -42,7 +42,7 @@ const Navbar = () => {
               className={({ isActive }) => (isActive ? 'active-link' : 'link')}
               to="/manage"
             >
-              Manage Item
+              Manage Items
             </NavLink>
           ) : (
             ''
@@ -62,7 +62,7 @@ const Navbar = () => {
               className={({ isActive }) => (isActive ? 'active-link' : 'link')}
               to="/myitem"
             >
-              My Item
+              My Items
             </NavLink>
           ) : (
             ''

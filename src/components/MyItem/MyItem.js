@@ -37,8 +37,8 @@ const MyItem = () => {
     getItems();
   },[user])
   return (
-    <div>
-      <h1>My Item {items.length} </h1>
+    <div className='my-item px-10'>
+      <h1 className='text-center text-4xl text-gray-500'>My Item {items.length} </h1>
     </div>
   );
 };

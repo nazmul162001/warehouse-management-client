@@ -7,6 +7,7 @@ import {
 import auth from '../../firebase.init';
 import { toast } from 'react-toastify';
 import {FcGoogle} from 'react-icons/fc'
+import Spinner from '../Spinner/Spinner';
 
 const Register = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
@@ -24,6 +25,10 @@ const Register = () => {
         User already exists, Please Log in{' '}
       </p>
     );
+  }
+
+  if(loading){
+    return <Spinner></Spinner>
   }
 
   if(googleError){

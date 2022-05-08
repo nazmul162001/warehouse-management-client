@@ -11,6 +11,7 @@ import {
 } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
 import axios from 'axios';
+import Spinner from '../Spinner/Spinner';
 
 const Login = () => {
   const [signInWithGoogle, googleUser, googleLoading, googleError] =
@@ -26,7 +27,7 @@ const Login = () => {
   const location = useLocation();
   const from = location.state?.from?.pathname || '/';
 
-  if (googleUser) {
+  if (googleUser || user) {
     navigate(from, { replace: true });
   }
 
@@ -45,6 +46,10 @@ const Login = () => {
     );
   }
 
+  if(loading){
+   return <Spinner></Spinner>
+  }
+
   // submit form
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -59,7 +64,7 @@ const Login = () => {
     );
     // console.log(data);
     localStorage.setItem('accessToken', data.accessToken);
-    navigate(from, { replace: true });
+    // navigate(from, { replace: true });
   };
   // get email from input //
   const handleEmail = (e) => {

@@ -51,7 +51,7 @@ const Banner = () => {
             </p>
             <div className="button py-5 flex justify-center items-center">
               <Link
-                className="py-3 px-14 mx-5 bg-yellow-500 rounded-full"
+                className="py-3 px-14 mx-5 bg-yellow-500 rounded-full "
                 to="/"
               >
                 Join Us

@@ -25,18 +25,17 @@ const InventoryDetails = () => {
     }
   };
 
-  const handleQuantity = e => {
+  const handleQuantity = (e) => {
     e.preventDefault();
     const url = `http://localhost:5000/service/${id}`;
     fetch(url, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ quantity: +reStack + +quantity }),
-    })
-    setReStack(0)
-    toast.success('ReStock item')
-  }
-
+    });
+    setReStack(0);
+    toast.success('Successfully ReStock item');
+  };
 
   useEffect(() => {
     fetch(`http://localhost:5000/service/${id}`)
@@ -47,7 +46,7 @@ const InventoryDetails = () => {
   // handle deliver
   const handleDeliver = () => {
     if (quantity <= 0) {
-      toast.error('No more item available for deliver');
+      toast.error('This item is Sold out');
     } else {
       const oldQuantity = parseInt(quantity);
       const updateQuantity = oldQuantity - 1;
@@ -60,7 +59,7 @@ const InventoryDetails = () => {
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
-          toast.success('Deliver 1 item')
+          toast.success('Deliver 1 item');
         });
     }
   };
@@ -156,10 +155,12 @@ const InventoryDetails = () => {
                         // colspan="2"
                         className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap text-center border-r h-auto w-52"
                       >
-                        Sold:
+                        Stock:
                       </td>
                       <td className="text-left text-sm text-gray-900 font-light px-6 py-4">
-                        Sold
+                        {
+                          quantity === 0 ? 'Sold' : 'Available'
+                        }
                       </td>
                     </tr>
                     <tr className="bg-white border-b deliver">
@@ -195,20 +196,20 @@ const InventoryDetails = () => {
       </div>
       {/* reStock form  */}
       <form onSubmit={handleQuantity} className="text-center">
-        <div class="flex justify-center">
-          <div class="mb-3 xl:w-96">
+        <div className="flex justify-center">
+          <div className="mb-3 xl:w-96">
             <label
               for="exampleNumber0"
-              class="form-label inline-block mb-2 text-gray-700"
+              className="form-label inline-block mb-2 text-gray-700"
             >
               <h1 className="text-2xl text-slate-600 mt-5">ReStock the item</h1>
             </label>
             <input
-            onChange={handleInput}
+              onChange={handleInput}
               value={reStack}
               type="number"
               name="number"
-              class="
+              className="
         form-control
         block
         w-full

@@ -75,7 +75,7 @@ const Review = () => {
         <SwiperSlide className='review p-3 rounded-md bg-gray-100'>
           <img style={{width: '130px', height: '130px', marginTop: '-50px', border: '10px solid white'}} className='mx-auto rounded-full h-20' src="https://www.mantruckandbus.com/fileadmin/_processed_/2/b/csm_19-09_startseite_interviewkachel_324_224_3_726a3e77d5.jpg" alt="" />
 
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo fuga quisquam quod minima dolore distinctio nemo eligendi maiores vitae sequi. Deleniti delectus incidunt hic aperiam.</p>
+          <p>They are very sincere about their business. I am very happy to be associate with them. Recommended to supply your product</p>
           <span className="pt-5 inline-block pr-5 text-orange-500 text-md">Abdul Alim</span>
           <span className="italic">co-founder Pran</span>
         </SwiperSlide>

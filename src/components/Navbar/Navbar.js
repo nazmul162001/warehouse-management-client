@@ -6,15 +6,33 @@ import auth from '../../firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { MenuAlt1Icon, XIcon } from '@heroicons/react/solid';
 import { signOut } from 'firebase/auth';
+import swal from 'sweetalert';
 
 const Navbar = () => {
   const [user] = useAuthState(auth);
   const [open, setOpen] = useState(false);
+  
 
   //signOUt
   const handleLogOut = (e) => {
     e.preventDefault();
-    signOut(auth);
+    swal({
+      title: "Are you sure?",
+      text: "You want to logOut!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        swal("Successfully Logout", {
+          icon: "success",
+        });
+        signOut(auth);
+      } else {
+        swal("I think You clicked by mistake!");
+      }
+    });
   };
 
   return (

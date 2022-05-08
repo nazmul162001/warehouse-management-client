@@ -3,9 +3,8 @@ import { Link } from 'react-router-dom';
 
 const NotFound = () => {
   return (
-    <div className='text-center'>
-      <h2 className='text-5xl'>Sorry Page Not found</h2>
-      <button className='text-3xl px-8 py-1 my-3 bg-green-500 rounded-b-full'> <Link to='/'> Go Home</Link> </button>
+    <div className='flex justify-center items-center w-full h-screen'>
+      <img className='w-full h-screen' src="https://jonkuhrt.files.wordpress.com/2020/01/error-404-message.png" alt="" />
     </div>
   );
 };

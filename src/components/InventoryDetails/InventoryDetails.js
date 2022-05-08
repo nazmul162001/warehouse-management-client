@@ -114,7 +114,7 @@ const InventoryDetails = () => {
                         Price:
                       </td>
                       <td className="text-left text-sm text-gray-900 font-light px-6 py-4 ">
-                        {price}
+                        {price} (per kg)
                       </td>
                     </tr>
                     <tr className="bg-white border-b">

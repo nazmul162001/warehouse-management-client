@@ -15,7 +15,7 @@ const InventoryItem = (props) => {
           <strong>{name}</strong>
         </p>
         <div className="product-info flex justify-between py-3">
-          <p className="font-bold price">${price}</p>
+          <p className="font-bold price">${price}(per kg)</p>
           <p className="quantity text-gray-800">
             <strong className="text-2xl">Q</strong> uantity:{' '}
             <span
@@ -34,10 +34,10 @@ const InventoryItem = (props) => {
             <Link to='/login'><RiChatHeartLine className='text-3xl mr-3 text-orange-500' /></Link>{' '}
           </p>
         </div>
-        <div className="text-center w-full">
+        <div className="text-center">
           <Link
             to={`inventory/${_id}`}
-            className="bg-slate-700 w-full py-2 px-5 rounded-md text-white"
+            className="bg-slate-700 w-full py-2 px-5 rounded-md text-white block"
           >
             Stock Update
           </Link>

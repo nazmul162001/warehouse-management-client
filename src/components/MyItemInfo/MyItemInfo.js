@@ -51,7 +51,7 @@ const MyItemInfo = (props) => {
           <strong>{name}</strong>
         </p>
         <div className="product-info flex justify-between py-3">
-          <p className="font-bold price">${price}</p>
+          <p className="font-bold price">${price} (per kg) </p>
           <p className="quantity text-gray-800">
             <strong className="text-2xl">Q</strong> uantity:{' '}
             <span

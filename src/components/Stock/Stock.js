@@ -14,7 +14,7 @@ const Stock = () => {
                 <img
                   alt="gallery"
                   className="block object-cover object-center w-full h-full rounded-lg"
-                  src="https://previews.123rf.com/images/junpinzon/junpinzon1507/junpinzon150700182/48535245-fresh-fruits-and-vegetables-sold-at-a-grocery-store.jpg"
+                  src="https://gleeapp.in/product-images/2020/06/11/570/large/litchi-1kg-1.jpeg"
                 />
               </div>
               <div className="w-1/2 p-1 md:p-2">

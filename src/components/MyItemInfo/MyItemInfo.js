@@ -2,28 +2,43 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { RiChatHeartLine } from 'react-icons/ri';
 import useInventory from '../../Hooks/useInventory';
+import swal from 'sweetalert';
 import './MyItemInfo.css'
+
 
 const MyItemInfo = (props) => {
   const { name, description, price, supplier, img, quantity, _id } = props.item;
   const [services, setServices] = useInventory();
   // console.log(services);
 
+  
   // handle delete
   const handleDelete = (id) => {
-    const proceed = window.confirm('Are You Sure?');
-    if (proceed) {
-      const url = `https://agile-refuge-01523.herokuapp.com/service/${id}`;
-      fetch(url, {
-        method: 'DELETE',
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          const remaining = services.filter((service) => service._id !== id);
-          setServices(remaining);
+    swal({
+      title: 'Are you sure?',
+      text: 'You want to delete this item!',
+      icon: 'warning',
+      buttons: true,
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        swal('Poof! Your item has been deleted!', {
+          icon: 'success',
         });
-    }
+        const url = `https://agile-refuge-01523.herokuapp.com/service/${id}`;
+        fetch(url, {
+          method: 'DELETE',
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            const remaining = services.filter((service) => service._id !== id);
+            setServices(remaining);
+          });
+      } else {
+        swal('Your item is safe!');
+      }
+    });
   };
 
   return (

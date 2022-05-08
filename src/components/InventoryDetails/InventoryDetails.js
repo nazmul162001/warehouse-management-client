@@ -233,7 +233,7 @@ const InventoryDetails = () => {
         <div className="submit ">
           <button className="deliver flex justify-center items-center mx-auto h-14">
             <input
-              className="py-2 px-5 rounded"
+              className="py-2 px-5 rounded cursor-pointer"
               type="submit"
               value="ReStock items"
             />

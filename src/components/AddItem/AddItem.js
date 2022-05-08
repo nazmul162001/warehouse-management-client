@@ -248,7 +248,7 @@ const AddItem = () => {
         </div>
         <div className="submit-form bg-gray-500 rounded-full">
           <input
-            className="w-full py-2 text-white"
+            className="w-full py-2 text-white cursor-pointer"
             type="submit"
             value="Add Item"
           />

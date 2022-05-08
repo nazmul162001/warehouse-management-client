@@ -100,9 +100,9 @@ const Footer = () => {
             </form>
           </div>
         </div>
-        <div className="copyright flex flex-col md:flex-row my-3 items-center justify-between px-16 border-t-2 border-slate-300 py-5">
+        <div className="copyright flex flex-col md:flex-row my-3 items-center justify-between px-0 md:px-16 border-t-2 border-slate-300 py-5">
           <div className="copyright-text">
-            <p>
+            <p className='flex justify-center items-center flex-col md:flex-row'>
               Copyright &copy;2022{' '}
               <Link to='/' className="text-sky-500 italic">
                 Kraft Foods

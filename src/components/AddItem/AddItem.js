@@ -41,7 +41,7 @@ const AddItem = () => {
 
   return (
     <div className="add-item w-full h-full mt-5">
-      <form onSubmit={handleAddItem} className=" w-1/2 mx-auto">
+      <form onSubmit={handleAddItem} className="w-full px-10 md:px-0 md:w-1/2 mx-auto">
         <h1 className="text-center text-2xl text-gray-500 mb-5">
           Add Your Item
         </h1>

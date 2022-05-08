@@ -54,7 +54,7 @@ const Banner = () => {
                 className="py-3 px-14 mx-5 bg-yellow-500 rounded-full flex justify-center items-center "
                 to="/"
               >
-                Join Us <MdOutlineGroupAdd className='ml-2 text-2xl' />
+                Join Us <MdOutlineGroupAdd className='ml-2 text-2xl hidden md:block' />
               </Link>
               <a
                 className="py-2 mx-3 px-5 rounded-full flex justify-center items-center border-2 border-orange-500 border-opacity-50"

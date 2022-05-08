@@ -30,11 +30,18 @@ const Login = () => {
     navigate(from, { replace: true });
   }
 
+
   // show error message
   let errorMessage;
   if (googleError) {
     errorMessage = (
       <p className="italic text-red-600 font-xl"> {googleError.message} </p>
+    );
+  }
+
+  if(error){
+    errorMessage = (
+      <p className='italic text-red-600 font-xl'> {error.message} </p>
     );
   }
 

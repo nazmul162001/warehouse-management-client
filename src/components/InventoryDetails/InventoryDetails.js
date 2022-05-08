@@ -34,7 +34,12 @@ const InventoryDetails = () => {
       body: JSON.stringify({ quantity: +reStack + +quantity }),
     });
     setReStack(0);
-    toast.success('Successfully ReStock item');
+    if(reStack == 0){
+      toast.error('please input quantity')
+    }
+    else{
+      toast.success('Successfully ReStock item');
+    }
   };
 
   useEffect(() => {

@@ -8,7 +8,7 @@ const Inventory = () => {
 
   return (
     <section className="w-full">
-      {inventory.length === 0 ? <Spinner></Spinner> : ''}
+      {/* {inventory.length === 0 ? <Spinner></Spinner> : ''} */}
       <h1 className="text-center text-5xl w-full my-10 text-gray-500 bottom-title relative">
         Inventory
       </h1>

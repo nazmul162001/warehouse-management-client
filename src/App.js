@@ -15,58 +15,87 @@ import RequireAuth from './components/RequireAuth/RequireAuth';
 import InventoryDetails from './components/InventoryDetails/InventoryDetails';
 import AddItem from './components/AddItem/AddItem';
 import MyItem from './components/MyItem/MyItem';
+import { useEffect, useState } from 'react';
+import Spinner from './components/Spinner/Spinner';
 
 function App() {
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  }, []);
   return (
-    <div className="">
-      <Navbar></Navbar>
-      <Routes>
-        <Route path="/" element={<HomePage></HomePage>}></Route>
-        <Route path="/blogs" element={<Blogs></Blogs>}></Route>
-        <Route path="/login" element={<Login></Login>}></Route>
-        <Route path="/logout" element={<LogOut></LogOut>}></Route>
-        <Route path="/register" element={<Register></Register>}></Route>
-        <Route path="/manage" element={
-          <RequireAuth>
-            <ManageItem></ManageItem>
-          </RequireAuth>
-        }></Route>
-        <Route path='/inventory/:id' element={
-          <RequireAuth>
-            <InventoryDetails></InventoryDetails>
-          </RequireAuth>
-        }></Route>
-        <Route path='/additem' element={
-          <RequireAuth>
-            <AddItem></AddItem>
-          </RequireAuth>
-        }></Route>
-        <Route path='/manage/inventory/:id' element={
-          <RequireAuth>
-            <InventoryDetails></InventoryDetails>
-          </RequireAuth>
-        }></Route>
-        <Route path='/myitem' element={
-          <RequireAuth>
-            <MyItem></MyItem>
-          </RequireAuth>
-        }></Route>
-        <Route path="*" element={<NotFound></NotFound>}></Route>
-      </Routes>
-      <Footer></Footer>
-      <ToastContainer
-        position="top-center"
-        autoClose={2000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        transition={Zoom}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-      />
-    </div>
+    <>
+      <div className="">
+        <Navbar></Navbar>
+        {loading ? (
+          <Spinner></Spinner>
+        ) : (
+          <Routes>
+            <Route path="/" element={<HomePage></HomePage>}></Route>
+            <Route path="/blogs" element={<Blogs></Blogs>}></Route>
+            <Route path="/login" element={<Login></Login>}></Route>
+            <Route path="/logout" element={<LogOut></LogOut>}></Route>
+            <Route path="/register" element={<Register></Register>}></Route>
+            <Route
+              path="/manage"
+              element={
+                <RequireAuth>
+                  <ManageItem></ManageItem>
+                </RequireAuth>
+              }
+            ></Route>
+            <Route
+              path="/inventory/:id"
+              element={
+                <RequireAuth>
+                  <InventoryDetails></InventoryDetails>
+                </RequireAuth>
+              }
+            ></Route>
+            <Route
+              path="/additem"
+              element={
+                <RequireAuth>
+                  <AddItem></AddItem>
+                </RequireAuth>
+              }
+            ></Route>
+            <Route
+              path="/manage/inventory/:id"
+              element={
+                <RequireAuth>
+                  <InventoryDetails></InventoryDetails>
+                </RequireAuth>
+              }
+            ></Route>
+            <Route
+              path="/myitem"
+              element={
+                <RequireAuth>
+                  <MyItem></MyItem>
+                </RequireAuth>
+              }
+            ></Route>
+            <Route path="*" element={<NotFound></NotFound>}></Route>
+          </Routes>
+        )}
+        <Footer></Footer>
+        <ToastContainer
+          position="top-center"
+          autoClose={2000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          transition={Zoom}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
+      </div>
+    </>
   );
 }
 

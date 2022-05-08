@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { RiChatHeartLine } from 'react-icons/ri';
 import useInventory from '../../Hooks/useInventory';
+import './MyItemInfo.css'
 
 const MyItemInfo = (props) => {
   const { name, description, price, supplier, img, quantity, _id } = props.item;
@@ -46,7 +47,7 @@ const MyItemInfo = (props) => {
             </span>{' '}
           </p>
         </div>
-        <p className="my-2 text-gray-500"> {description} </p>
+        <p className="my-2 text-gray-500 overflow-scroll h-36 description"> {description} </p>
         <div className="supplier flex items-center justify-between pb-5">
           <p className="italic my-2"> Supplier: {supplier} </p>
           <p>

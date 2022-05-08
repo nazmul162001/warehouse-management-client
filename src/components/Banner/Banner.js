@@ -1,7 +1,7 @@
 import React from 'react';
 import './Banner.css';
 import { AiOutlineYoutube } from 'react-icons/ai';
-// import { MdOutlineAddShoppingCart } from 'react-icons/md';
+import { MdOutlineGroupAdd } from 'react-icons/md';
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -51,10 +51,10 @@ const Banner = () => {
             </p>
             <div className="button py-5 flex justify-center items-center">
               <Link
-                className="py-3 px-14 mx-5 bg-yellow-500 rounded-full "
+                className="py-3 px-14 mx-5 bg-yellow-500 rounded-full flex justify-center items-center "
                 to="/"
               >
-                Join Us
+                Join Us <MdOutlineGroupAdd className='ml-2 text-2xl' />
               </Link>
               <a
                 className="py-2 mx-3 px-5 rounded-full flex justify-center items-center border-2 border-orange-500 border-opacity-50"
@@ -89,11 +89,11 @@ const Banner = () => {
               quality of life.
             </p>
             <div className="button py-5 flex justify-center items-center">
-              <Link
-                className="py-3 px-14 mx-5 bg-yellow-500 rounded-full"
+            <Link
+                className="py-3 px-14 mx-5 bg-yellow-500 rounded-full flex justify-center items-center "
                 to="/"
               >
-                Join Us
+                Join Us <MdOutlineGroupAdd className='ml-2 text-2xl' />
               </Link>
               <a
                 className="py-2 mx-3 px-5 rounded-full flex justify-center items-center border-2 border-orange-500 border-opacity-50 text-white"
@@ -127,11 +127,11 @@ const Banner = () => {
               in their food.
             </p>
             <div className="button py-5 flex justify-center items-center">
-              <Link
-                className="py-3 px-14 mx-5 bg-yellow-500 rounded-full"
+            <Link
+                className="py-3 px-14 mx-5 bg-yellow-500 rounded-full flex justify-center items-center "
                 to="/"
               >
-                Join Us
+                Join Us <MdOutlineGroupAdd className='ml-2 text-2xl' />
               </Link>
               <a
                 className="py-2 mx-3 px-5 rounded-full flex justify-center items-center border-2 border-orange-500 border-opacity-50 text-white"

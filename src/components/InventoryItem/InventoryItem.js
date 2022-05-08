@@ -26,7 +26,7 @@ const InventoryItem = (props) => {
             </span>{' '}
           </p>
         </div>
-        <p className="my-2 text-gray-500"> {description} </p>
+        <p className="my-2 text-gray-500 overflow-scroll h-36 description"> {description} </p>
         <div className="supplier flex items-center justify-between pb-5">
           <p className="italic my-2"> Supplier: {supplier} </p>
           <p>

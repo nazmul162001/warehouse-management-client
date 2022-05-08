@@ -4,28 +4,27 @@ import { RiChatHeartLine } from 'react-icons/ri';
 import useInventory from '../../Hooks/useInventory';
 
 const AllInventory = (props) => {
-  const { name, description, price, supplier, img, quantity , _id } = props.item;
+  const { name, description, price, supplier, img, quantity, _id } = props.item;
   const [services, setServices] = useInventory();
   // console.log(services);
 
-  // handle delete 
-  const handleDelete = id => {
-    const proceed = window.confirm('Are You Sure?')
-    if(proceed){
-      const url = `http://localhost:5000/service/${id}`
+  // handle delete
+  const handleDelete = (id) => {
+    const proceed = window.confirm('Are You Sure?');
+    if (proceed) {
+      const url = `https://agile-refuge-01523.herokuapp.com/service/${id}`;
       fetch(url, {
-        method: 'DELETE'
+        method: 'DELETE',
       })
-      .then(res => res.json())
-      .then(data => {
-        console.log(data);
-        const remaining = services.filter(service => service._id !== id)
-        setServices(remaining);
-      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          const remaining = services.filter((service) => service._id !== id);
+          setServices(remaining);
+        });
     }
-  }
-  
-  
+  };
+
   return (
     <>
       <div className="rounded-md p-5 custom-shadow mt-20">
@@ -52,7 +51,9 @@ const AllInventory = (props) => {
           <p className="italic my-2"> Supplier: {supplier} </p>
           <p>
             {' '}
-            <Link to='/login'><RiChatHeartLine className='text-3xl mr-3 text-orange-500' /></Link>{' '}
+            <Link to="/login">
+              <RiChatHeartLine className="text-3xl mr-3 text-orange-500" />
+            </Link>{' '}
           </p>
         </div>
         <div className="w-full flex justify-between items-center">
@@ -62,7 +63,12 @@ const AllInventory = (props) => {
           >
             Stock Update
           </Link>
-          <button onClick={()=>handleDelete(_id)}  className=" bg-red-600 w-full py-2 px-5 rounded-md text-white ml-1">Delete</button>
+          <button
+            onClick={() => handleDelete(_id)}
+            className=" bg-red-600 w-full py-2 px-5 rounded-md text-white ml-1"
+          >
+            Delete
+          </button>
         </div>
       </div>
     </>

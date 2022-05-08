@@ -13,7 +13,7 @@ const MyItem = () => {
   useEffect(() => {
     const getItems = async () => {
       const email = user.email;
-      const url = `http://localhost:5000/myitem?email=${email}`;
+      const url = `https://agile-refuge-01523.herokuapp.com/myitem?email=${email}`;
       // fetch(url)
       // .then(res => res.json())
       // .then(data => setItems(data))

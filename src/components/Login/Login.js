@@ -39,16 +39,19 @@ const Login = () => {
   }
 
   // submit form
-  const handleSubmit = async e => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const email = e.target.email.value;
     const password = e.target.password.value;
 
     await signInWithEmailAndPassword(email, password);
-    const {data} = await axios.post('http://localhost:5000/login', {email})
+    const { data } = await axios.post(
+      'https://agile-refuge-01523.herokuapp.com/login',
+      { email }
+    );
     // console.log(data);
-    localStorage.setItem('accessToken',data.accessToken);
+    localStorage.setItem('accessToken', data.accessToken);
     navigate(from, { replace: true });
   };
   // get email from input //

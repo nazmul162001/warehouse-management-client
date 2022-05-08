@@ -27,7 +27,7 @@ const InventoryDetails = () => {
 
   const handleQuantity = (e) => {
     e.preventDefault();
-    const url = `http://localhost:5000/service/${id}`;
+    const url = `https://agile-refuge-01523.herokuapp.com/service/${id}`;
     fetch(url, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
@@ -38,7 +38,7 @@ const InventoryDetails = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/service/${id}`)
+    fetch(`https://agile-refuge-01523.herokuapp.com/service/${id}`)
       .then((res) => res.json())
       .then((data) => setItem(data));
   }, [id, item]);
@@ -50,7 +50,7 @@ const InventoryDetails = () => {
     } else {
       const oldQuantity = parseInt(quantity);
       const updateQuantity = oldQuantity - 1;
-      const url = `http://localhost:5000/service/${id}`;
+      const url = `https://agile-refuge-01523.herokuapp.com/service/${id}`;
       fetch(url, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
@@ -158,9 +158,7 @@ const InventoryDetails = () => {
                         Stock:
                       </td>
                       <td className="text-left text-sm text-gray-900 font-light px-6 py-4">
-                        {
-                          quantity === 0 ? 'Sold' : 'Available'
-                        }
+                        {quantity === 0 ? 'Sold' : 'Available'}
                       </td>
                     </tr>
                     <tr className="bg-white border-b deliver">

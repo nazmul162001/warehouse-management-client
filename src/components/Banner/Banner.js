@@ -49,15 +49,15 @@ const Banner = () => {
               you with ideas for an organic packaged good product, restaurant,
               food truck other anything else.
             </p>
-            <div className="button py-5 flex justify-center items-center">
-              <Link
-                className="py-3 px-14 mx-5 bg-yellow-500 rounded-full flex justify-center items-center "
+            <div className="button py-5 flex flex-col md:flex-row justify-center items-center">
+            <Link
+                className="py-3 px-14 mx-5 bg-yellow-500 rounded-full flex justify-center items-center mb-3 md:mb-0"
                 to="/"
               >
-                Join Us <MdOutlineGroupAdd className='ml-2 text-2xl hidden md:block' />
+                Join Us <MdOutlineGroupAdd className='ml-2 text-2xl ' />
               </Link>
               <a
-                className="py-2 mx-3 px-5 rounded-full flex justify-center items-center border-2 border-orange-500 border-opacity-50"
+                className="py-2 mx-3 px-5 rounded-full flex justify-center items-center border-2 border-orange-500 border-opacity-50 text-black"
                 href="https://youtu.be/Rmfjc-JrCS0"
                 target="_blank"
               >
@@ -88,12 +88,12 @@ const Banner = () => {
               food composition and food flavor on health, wellbeing, and the
               quality of life.
             </p>
-            <div className="button py-5 flex justify-center items-center">
+            <div className="button py-5 flex flex-col md:flex-row justify-center items-center">
             <Link
-                className="py-3 px-14 mx-5 bg-yellow-500 rounded-full flex justify-center items-center "
+                className="py-3 px-14 mx-5 bg-yellow-500 rounded-full flex justify-center items-center mb-3 md:mb-0"
                 to="/"
               >
-                Join Us <MdOutlineGroupAdd className='ml-2 text-2xl' />
+                Join Us <MdOutlineGroupAdd className='ml-2 text-2xl ' />
               </Link>
               <a
                 className="py-2 mx-3 px-5 rounded-full flex justify-center items-center border-2 border-orange-500 border-opacity-50 text-white"
@@ -126,12 +126,12 @@ const Banner = () => {
               people buy organic food to avoid chemicals, especially pesticides,
               in their food.
             </p>
-            <div className="button py-5 flex justify-center items-center">
+            <div className="button py-5 flex flex-col md:flex-row justify-center items-center">
             <Link
-                className="py-3 px-14 mx-5 bg-yellow-500 rounded-full flex justify-center items-center "
+                className="py-3 px-14 mx-5 bg-yellow-500 rounded-full flex justify-center items-center mb-3 md:mb-0"
                 to="/"
               >
-                Join Us <MdOutlineGroupAdd className='ml-2 text-2xl' />
+                Join Us <MdOutlineGroupAdd className='ml-2 text-2xl ' />
               </Link>
               <a
                 className="py-2 mx-3 px-5 rounded-full flex justify-center items-center border-2 border-orange-500 border-opacity-50 text-white"

@@ -48,7 +48,7 @@ const AllInventory = (props) => {
           <strong>{name}</strong>
         </p>
         <div className="product-info flex justify-between py-3">
-          <p className="font-bold price">${price} (per kg) </p>
+          <p className="font-bold price">${price} </p>
           <p className="quantity text-gray-800">
             <strong className="text-2xl">Q</strong> uantity:{' '}
             <span
@@ -72,10 +72,10 @@ const AllInventory = (props) => {
             </Link>{' '}
           </p>
         </div>
-        <div className="w-full flex justify-between items-center">
+        <div className="w-full flex flex-col md:flex-row justify-between items-center">
           <Link
             to={`inventory/${_id}`}
-            className="bg-slate-700 w-full py-2 px-5 rounded-md text-white mr-1"
+            className="bg-slate-700 w-full py-2 px-5 rounded-md text-white mr-1 mb-3 md:mb-0"
           >
             Stock Update
           </Link>

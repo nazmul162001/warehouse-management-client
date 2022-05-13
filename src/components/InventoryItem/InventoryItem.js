@@ -4,7 +4,7 @@ import './InventoryItem.css';
 import { RiChatHeartLine } from 'react-icons/ri';
 
 const InventoryItem = (props) => {
-  const { name, description, price, supplier, img, quantity , _id } = props.item;
+  const { name, description, price, supplier, img, quantity, _id } = props.item;
   return (
     <>
       <div className="rounded-md p-5 custom-shadow mt-20 w-full">
@@ -15,7 +15,7 @@ const InventoryItem = (props) => {
           <strong>{name}</strong>
         </p>
         <div className="product-info flex justify-between py-3">
-          <p className="font-bold price">${price}(per kg)</p>
+          <p className="font-bold price">${price}</p>
           <p className="quantity text-gray-800">
             <strong className="text-2xl">Q</strong> uantity:{' '}
             <span
@@ -26,12 +26,17 @@ const InventoryItem = (props) => {
             </span>{' '}
           </p>
         </div>
-        <p className="my-2 text-gray-500 overflow-scroll h-36 description"> {description} </p>
+        <p className="my-2 text-gray-500 overflow-scroll h-36 description">
+          {' '}
+          {description}{' '}
+        </p>
         <div className="supplier flex items-center justify-between pb-5">
           <p className="italic my-2"> Supplier: {supplier} </p>
           <p>
             {' '}
-            <Link to='/login'><RiChatHeartLine className='text-3xl mr-3 text-orange-500' /></Link>{' '}
+            <Link to="/login">
+              <RiChatHeartLine className="text-3xl mr-3 text-orange-500" />
+            </Link>{' '}
           </p>
         </div>
         <div className="text-center">

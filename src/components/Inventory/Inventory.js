@@ -12,7 +12,7 @@ const Inventory = () => {
       <h1 className="text-center text-5xl w-full my-10 text-gray-500 bottom-title relative">
         Inventory
       </h1>
-      <div className="inventory px-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center justify-center gap-5">
+      <div className="inventory px-2 md:px-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center justify-center gap-5">
         {newInventory.map((item) => (
           <InventoryItem key={item._id} item={item} />
         ))}

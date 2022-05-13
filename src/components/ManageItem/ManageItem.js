@@ -20,7 +20,7 @@ const ManageItem = () => {
           Add New Item <MdAddCircleOutline className='ml-2 text-xl'/>
         </Link>
       </div>
-      <div className="inventory px-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center justify-center gap-5">
+      <div className="inventory px-2 md:px-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center justify-center gap-5">
         {item.map((item) => (
           <AllInventory key={item._id} item={item} />
         ))}

@@ -3,15 +3,13 @@ import { Link } from 'react-router-dom';
 import { RiChatHeartLine } from 'react-icons/ri';
 import useInventory from '../../Hooks/useInventory';
 import swal from 'sweetalert';
-import './MyItemInfo.css'
-
+import './MyItemInfo.css';
 
 const MyItemInfo = (props) => {
   const { name, description, price, supplier, img, quantity, _id } = props.item;
   const [services, setServices] = useInventory();
   // console.log(services);
 
-  
   // handle delete
   const handleDelete = (id) => {
     swal({
@@ -51,7 +49,7 @@ const MyItemInfo = (props) => {
           <strong>{name}</strong>
         </p>
         <div className="product-info flex justify-between py-3">
-          <p className="font-bold price">${price} (per kg) </p>
+          <p className="font-bold price">${price} </p>
           <p className="quantity text-gray-800">
             <strong className="text-2xl">Q</strong> uantity:{' '}
             <span
@@ -62,7 +60,10 @@ const MyItemInfo = (props) => {
             </span>{' '}
           </p>
         </div>
-        <p className="my-2 text-gray-500 overflow-scroll h-36 description"> {description} </p>
+        <p className="my-2 text-gray-500 overflow-scroll h-36 description">
+          {' '}
+          {description}{' '}
+        </p>
         <div className="supplier flex items-center justify-between pb-5">
           <p className="italic my-2"> Supplier: {supplier} </p>
           <p>

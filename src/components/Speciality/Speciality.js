@@ -5,7 +5,7 @@ import { FaArrowRight } from 'react-icons/fa';
 
 const Speciality = () => {
   return (
-    <div className="our-speciality px-16">
+    <div className="our-speciality px-2 md:px-16">
       <div className="see-more  py-4 mr-14 flex items-center justify-end">
         <Link to='/manage' className='flex items-center hover:text-orange-500'>
           {' '}

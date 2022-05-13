@@ -34,10 +34,9 @@ const InventoryDetails = () => {
       body: JSON.stringify({ quantity: +reStack + +quantity }),
     });
     setReStack(0);
-    if(reStack == 0){
-      toast.error('please input quantity')
-    }
-    else{
+    if (reStack == 0) {
+      toast.error('please input quantity');
+    } else {
       toast.success('Successfully ReStock item');
     }
   };
@@ -119,7 +118,7 @@ const InventoryDetails = () => {
                         Price:
                       </td>
                       <td className="text-left text-sm text-gray-900 font-light px-6 py-4 ">
-                        {price} (per kg)
+                        {price}
                       </td>
                     </tr>
                     <tr className="bg-white border-b">

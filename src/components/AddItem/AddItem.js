@@ -1,8 +1,14 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
+import auth from '../../firebase.init';
 import './AddItem.css';
 
 const AddItem = () => {
+
+  const [user] = useAuthState(auth);
+  
+  
   const handleAddItem = (e) => {
     e.preventDefault();
     const supplier = e.target.suppliarName.value;
@@ -94,8 +100,10 @@ const AddItem = () => {
       m-0
       focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
             id="floatingInput"
-            placeholder="name@example.com"
-            required
+            // placeholder="name@example.com"
+            // required
+            disabled
+            value={user.email}
           />
           <label htmlFor="floatingInput" className="text-gray-700">
             Email address

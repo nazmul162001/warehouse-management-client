@@ -103,7 +103,7 @@ const AddItem = () => {
             // placeholder="name@example.com"
             // required
             disabled
-            value={user.email}
+            value={user?.email}
           />
           <label htmlFor="floatingInput" className="text-gray-700">
             Email address
